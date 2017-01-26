@@ -1,0 +1,60 @@
+PODS:
+  - Alamofire (4.3.0)
+  - Decodable (0.5)
+  - DynamicColor (3.2.1)
+  - Eureka (2.0.0-beta.1)
+  - Opera (1.0.0):
+    - Alamofire (~> 4.0)
+    - RxCocoa (~> 3.0.1)
+    - RxSwift (~> 3.0.1)
+  - RxAlamofire (3.0.2):
+    - RxAlamofire/Core (= 3.0.2)
+  - RxAlamofire/Core (3.0.2):
+    - Alamofire (~> 4.0)
+    - RxSwift (~> 3.0)
+  - RxCocoa (3.0.1):
+    - RxSwift (~> 3.0)
+  - RxSwift (3.0.1)
+  - XLSwiftKit (2.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - Decodable
+  - DynamicColor
+  - Eureka (from `https://github.com/xmartlabs/Eureka.git`, branch `master`)
+  - Opera (from `https://github.com/xmartlabs/Opera.git`, branch `Swift3`)
+  - RxAlamofire
+  - RxCocoa
+  - RxSwift
+  - XLSwiftKit
+
+EXTERNAL SOURCES:
+  Eureka:
+    :branch: master
+    :git: https://github.com/xmartlabs/Eureka.git
+  Opera:
+    :branch: Swift3
+    :git: https://github.com/xmartlabs/Opera.git
+
+CHECKOUT OPTIONS:
+  Eureka:
+    :commit: c8288eae13678f9b5467f7580b052059a77a884b
+    :git: https://github.com/xmartlabs/Eureka.git
+  Opera:
+    :commit: c81c84dad0d9a96bb7f6017fdd6a30f23f4492d7
+    :git: https://github.com/xmartlabs/Opera.git
+
+SPEC CHECKSUMS:
+  Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  Decodable: 7c90acc68d357b71d0d6efc120faf9c53c644b7e
+  DynamicColor: 4786d650c69da6c3f2cbfe068348288ec4e5521f
+  Eureka: d014adf16406745e1a78d5790ea37ed130a0a8e5
+  Opera: 5018ced09d6caadc4c1076ea806c940b558761a2
+  RxAlamofire: bc53604b29fd2d220cfaa490c736cc4500819f34
+  RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
+  RxSwift: af5680055c4ad04480189c52d28385b1029493a6
+  XLSwiftKit: 4d48322a602120dc6300d58d7fb07b873e223c1c
+
+PODFILE CHECKSUM: efceebb5601824716adc043b34945b5d4b9381d2
+
+COCOAPODS: 1.0.1

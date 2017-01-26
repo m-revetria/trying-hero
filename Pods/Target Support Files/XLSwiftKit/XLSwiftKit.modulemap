@@ -1,0 +1,6 @@
+framework module XLSwiftKit {
+  umbrella header "XLSwiftKit-umbrella.h"
+
+  export *
+  module * { export * }
+}
