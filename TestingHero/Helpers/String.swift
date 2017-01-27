@@ -6,7 +6,7 @@
 //  Copyright © 2017 Xmartlabs. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension String: Error { }
 
@@ -31,6 +31,20 @@ extension String {
     func md5() -> String? {
         let data: Data? = md5()
         return data?.map { String(format: "%02hhx", $0) }.joined()
+    }
+
+    func attributedStringFromHtml() -> NSAttributedString? {
+        do {
+            if let data = self.data(using: .utf8, allowLossyConversion: true) {
+                return try NSAttributedString(
+                    data: data,
+                    options: [NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType],
+                    documentAttributes: nil
+                )
+            }
+        } catch { }
+
+        return nil
     }
 
 }

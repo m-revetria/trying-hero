@@ -1,12 +1,21 @@
 PODS:
   - Alamofire (4.3.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
   - Decodable (0.5)
   - DynamicColor (3.2.1)
   - Eureka (2.0.0-beta.1)
+  - Hero (0.1.1)
+  - Material (2.4.10):
+    - Material/Core (= 2.4.10)
+  - Material/Core (2.4.10)
   - Opera (1.0.0):
     - Alamofire (~> 4.0)
     - RxCocoa (~> 3.0.1)
     - RxSwift (~> 3.0.1)
+  - R.swift (3.2.0):
+    - R.swift.Library (~> 3.0.2)
+  - R.swift.Library (3.0.2)
   - RxAlamofire (3.0.2):
     - RxAlamofire/Core (= 3.0.2)
   - RxAlamofire/Core (3.0.2):
@@ -19,10 +28,14 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - AlamofireImage
   - Decodable
   - DynamicColor
   - Eureka (from `https://github.com/xmartlabs/Eureka.git`, branch `master`)
+  - Hero
+  - Material
   - Opera (from `https://github.com/xmartlabs/Opera.git`, branch `Swift3`)
+  - R.swift
   - RxAlamofire
   - RxCocoa
   - RxSwift
@@ -46,15 +59,20 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   Alamofire: 856a113053a7bc9cbe5d6367a555d773fc5cfef7
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   Decodable: 7c90acc68d357b71d0d6efc120faf9c53c644b7e
   DynamicColor: 4786d650c69da6c3f2cbfe068348288ec4e5521f
   Eureka: d014adf16406745e1a78d5790ea37ed130a0a8e5
+  Hero: b855122bc80662e7446300ca18c9e4bcb0679540
+  Material: ef1e6da2e242d582205c87847a5346138894a633
   Opera: 5018ced09d6caadc4c1076ea806c940b558761a2
+  R.swift: 207a372a2b5977caef440c696a368009460641d1
+  R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   RxAlamofire: bc53604b29fd2d220cfaa490c736cc4500819f34
   RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
   XLSwiftKit: 4d48322a602120dc6300d58d7fb07b873e223c1c
 
-PODFILE CHECKSUM: efceebb5601824716adc043b34945b5d4b9381d2
+PODFILE CHECKSUM: 1bb8525c85a105dca4f147d07e809fdf9cbd8971
 
 COCOAPODS: 1.0.1

@@ -13,6 +13,9 @@ import Opera
 enum MVUrlType: String, Decodable {
 
     case detail = "detail"
+    case inAppLink = "inAppLink"
+    case purchase = "purchase"
+    case reader = "reader"
     case wiki = "wiki"
 
 }

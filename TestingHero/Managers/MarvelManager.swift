@@ -33,4 +33,21 @@ extension MarvelManager {
             .map(extractData)
     }
 
+    func eventComics(eventId: Int, limit: Int = Constants.Networking.paginatedRequestsSize
+        ) -> Observable<MVPaginatedResponse<MVComic>> {
+        return API.Marvel.Events.Comics(eventId: eventId, limit: 5, offset: 0)
+            .rx_object()
+            .map(extractData)
+    }
+
+}
+
+
+extension MarvelManager {
+
+    func comic(resourceUri: String) -> Observable<MVComic> {
+        return API.Marvel.Comics.Get(resourceUri: resourceUri)
+            .rx_object()
+    }
+
 }

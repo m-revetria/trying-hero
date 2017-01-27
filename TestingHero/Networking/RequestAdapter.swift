@@ -18,16 +18,17 @@ class RequestAdapter: Alamofire.RequestAdapter {
         var _request = urlRequest
 
         if let url = _request.url, url.absoluteString.hasPrefix(Constants.Networking.marvelBaseUrl.absoluteString) {
-            var components = URLComponents(string: url.absoluteString)
-
             let timestamp = "\(Date().timeIntervalSince1970)"
-            components?.queryItems = [
-                URLQueryItem(name: "ts", value: timestamp),
-                URLQueryItem(name: "apikey", value: apiKey),
-                URLQueryItem(name: "hash", value: "\(timestamp)\(apiSecret)\(apiKey)".md5())
+
+            let params: [(name: String, value: String?)] = [
+                (name: "ts", value: timestamp),
+                (name: "apikey", value: apiKey),
+                (name: "hash", value: "\(timestamp)\(apiSecret)\(apiKey)".md5())
             ]
 
-            _request.url = components?.url
+            _request.url = params.reduce(url) { url, param in
+                return url.appendQueryParam(name: param.name, value: param.value)
+            }
         }
 
         return _request

@@ -6,10 +6,14 @@ use_frameworks!
 # Add Application pods here
 def app_pods
     pod 'Alamofire'
+    pod 'AlamofireImage'
     pod 'Decodable'
     pod 'DynamicColor'
     pod 'Eureka', :git => 'https://github.com/xmartlabs/Eureka.git', :branch => 'master'
+    pod 'Hero'
+    pod 'Material'
     pod 'Opera', :git => 'https://github.com/xmartlabs/Opera.git', :branch => 'Swift3'
+    pod 'R.swift'
     pod 'RxAlamofire'
     pod 'RxCocoa'
     pod 'RxSwift'

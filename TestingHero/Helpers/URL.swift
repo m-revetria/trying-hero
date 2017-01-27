@@ -20,4 +20,13 @@ extension URL: Decodable, DynamicDecodable {
         return result
     }
 
+    public func appendQueryParam(name: String, value: String?) -> URL {
+        var components = URLComponents(string: absoluteString)!
+        if components.queryItems == nil {
+            components.queryItems = []
+        }
+        components.queryItems?.append(URLQueryItem(name: name, value: value))
+        return components.url!
+    }
+
 }

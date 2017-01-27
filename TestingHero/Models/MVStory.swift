@@ -10,11 +10,17 @@ import Decodable
 import Foundation
 import Opera
 
-enum MVStoryCover: String, Decodable {
+enum MVStoryType: String, Decodable {
 
     case cover = "cover"
+    case credits = "credits"
     case interiorStory = "interiorStory"
     case none = ""
+    case profile = "profile"
+    case promo = "promo"
+    case pinup = "pinup"
+    case tableOfContent = "table of contents"
+    case textArticle = "text article"
 
 }
 
@@ -22,7 +28,7 @@ struct MVStory {
 
     let resourceUri: String
     let name: String
-    let type: MVStoryCover
+    let type: MVStoryType
 
 }
 
