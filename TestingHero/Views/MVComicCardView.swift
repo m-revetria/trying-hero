@@ -49,6 +49,7 @@ class MVComicCardView: OwnerView {
         mainCardView.toolbarEdgeInsetsPreset = .wideRectangle2
 
         imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: frame.width, height: 180))
+        imageView.contentMode = .scaleAspectFill
         mainCardView.presenterView = imageView
 
         descriptionLabel = UILabel()
@@ -64,8 +65,6 @@ class MVComicCardView: OwnerView {
         dateLabel.font = .systemFont(ofSize: 9)
         dateLabel.textAlignment = .center
         dateLabel.textColor = .gray
-
-        toolbar.title = "Age of Ultron"
 
         return mainCardView
     }

@@ -44,6 +44,12 @@
 		B24A89C61E3A969500A46C8F /* MVResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A89C51E3A969500A46C8F /* MVResponse.swift */; };
 		B2B0A33E1E520FA100980344 /* LoadingCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B0A33C1E520FA100980344 /* LoadingCellTableViewCell.swift */; };
 		B2B0A33F1E520FA100980344 /* LoadingCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B0A33D1E520FA100980344 /* LoadingCellTableViewCell.xib */; };
+		B2B0A3411E522A1D00980344 /* PlayStation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B0A3401E522A1D00980344 /* PlayStation.storyboard */; };
+		B2BE60761E5252AD002C7A83 /* PSGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BE60741E5252AD002C7A83 /* PSGameCollectionViewCell.swift */; };
+		B2BE60771E5252AD002C7A83 /* PSGameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2BE60751E5252AD002C7A83 /* PSGameCollectionViewCell.xib */; };
+		B2BE607A1E5258C1002C7A83 /* PSDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BE60791E5258C1002C7A83 /* PSDashboardViewController.swift */; };
+		B2BE607D1E525942002C7A83 /* PSFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BE607B1E525942002C7A83 /* PSFriendCollectionViewCell.swift */; };
+		B2BE607E1E525942002C7A83 /* PSFriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2BE607C1E525942002C7A83 /* PSFriendCollectionViewCell.xib */; };
 		B2F95CE51E3A688400E61BFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F95CE41E3A688400E61BFF /* AppDelegate.swift */; };
 		B2F95CEA1E3A688400E61BFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F95CE81E3A688400E61BFF /* Main.storyboard */; };
 		B2F95CEC1E3A688400E61BFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F95CEB1E3A688400E61BFF /* Assets.xcassets */; };
@@ -98,6 +104,12 @@
 		B24A89CC1E3A9D9300A46C8F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
 		B2B0A33C1E520FA100980344 /* LoadingCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingCellTableViewCell.swift; path = Views/LoadingCellTableViewCell.swift; sourceTree = "<group>"; };
 		B2B0A33D1E520FA100980344 /* LoadingCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadingCellTableViewCell.xib; path = Views/LoadingCellTableViewCell.xib; sourceTree = "<group>"; };
+		B2B0A3401E522A1D00980344 /* PlayStation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PlayStation.storyboard; path = Storyboards/PlayStation.storyboard; sourceTree = "<group>"; };
+		B2BE60741E5252AD002C7A83 /* PSGameCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PSGameCollectionViewCell.swift; path = Views/PSGameCollectionViewCell.swift; sourceTree = "<group>"; };
+		B2BE60751E5252AD002C7A83 /* PSGameCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PSGameCollectionViewCell.xib; path = Views/PSGameCollectionViewCell.xib; sourceTree = "<group>"; };
+		B2BE60791E5258C1002C7A83 /* PSDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PSDashboardViewController.swift; path = Controllers/PSDashboardViewController.swift; sourceTree = "<group>"; };
+		B2BE607B1E525942002C7A83 /* PSFriendCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PSFriendCollectionViewCell.swift; path = Views/PSFriendCollectionViewCell.swift; sourceTree = "<group>"; };
+		B2BE607C1E525942002C7A83 /* PSFriendCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PSFriendCollectionViewCell.xib; path = Views/PSFriendCollectionViewCell.xib; sourceTree = "<group>"; };
 		B2F95CE11E3A688400E61BFF /* TestingHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F95CE41E3A688400E61BFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F95CE91E3A688400E61BFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -147,6 +159,7 @@
 			children = (
 				B21A141E1E3B90AD0023CA71 /* Marvel */,
 				B2B0A33B1E520F0100980344 /* Onboarding */,
+				B2BE60731E52520A002C7A83 /* PlayStation */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -188,6 +201,7 @@
 				B21A142B1E3BB3080023CA71 /* Base */,
 				B21A141A1E3B8EA90023CA71 /* Marvel */,
 				B2FEF4A61E4E30BA0034CFD3 /* Onboarding */,
+				B2BE60781E5258A2002C7A83 /* PlayStation */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -227,6 +241,7 @@
 				B2F95CED1E3A688400E61BFF /* LaunchScreen.storyboard */,
 				B2F95CE81E3A688400E61BFF /* Main.storyboard */,
 				B21A14161E3B8DD10023CA71 /* Marvel.storyboard */,
+				B2B0A3401E522A1D00980344 /* PlayStation.storyboard */,
 				B2FEF4A41E4E2CB60034CFD3 /* Onboarding.storyboard */,
 			);
 			name = Storyboards;
@@ -302,6 +317,25 @@
 				B2B0A33D1E520FA100980344 /* LoadingCellTableViewCell.xib */,
 			);
 			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		B2BE60731E52520A002C7A83 /* PlayStation */ = {
+			isa = PBXGroup;
+			children = (
+				B2BE60741E5252AD002C7A83 /* PSGameCollectionViewCell.swift */,
+				B2BE60751E5252AD002C7A83 /* PSGameCollectionViewCell.xib */,
+				B2BE607B1E525942002C7A83 /* PSFriendCollectionViewCell.swift */,
+				B2BE607C1E525942002C7A83 /* PSFriendCollectionViewCell.xib */,
+			);
+			name = PlayStation;
+			sourceTree = "<group>";
+		};
+		B2BE60781E5258A2002C7A83 /* PlayStation */ = {
+			isa = PBXGroup;
+			children = (
+				B2BE60791E5258C1002C7A83 /* PSDashboardViewController.swift */,
+			);
+			name = PlayStation;
 			sourceTree = "<group>";
 		};
 		B2F95CD81E3A688400E61BFF = {
@@ -416,9 +450,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2B0A33F1E520FA100980344 /* LoadingCellTableViewCell.xib in Resources */,
+				B2BE607E1E525942002C7A83 /* PSFriendCollectionViewCell.xib in Resources */,
 				B21A14171E3B8DD10023CA71 /* Marvel.storyboard in Resources */,
+				B2BE60771E5252AD002C7A83 /* PSGameCollectionViewCell.xib in Resources */,
 				B21A14281E3B956F0023CA71 /* MVEventCollectionViewCell.xib in Resources */,
 				B21A143B1E3BF9030023CA71 /* MVComicCollectionViewCell.xib in Resources */,
+				B2B0A3411E522A1D00980344 /* PlayStation.storyboard in Resources */,
 				B2F95CEF1E3A688400E61BFF /* LaunchScreen.storyboard in Resources */,
 				B2F95CEC1E3A688400E61BFF /* Assets.xcassets in Resources */,
 				B2F95CEA1E3A688400E61BFF /* Main.storyboard in Resources */,
@@ -521,18 +558,21 @@
 				B24A89B71E3A8A7500A46C8F /* MVAPI.swift in Sources */,
 				B24A89A81E3A808C00A46C8F /* MVCharacter.swift in Sources */,
 				B24A89A41E3A7EAE00A46C8F /* MVTypedUrl.swift in Sources */,
+				B2BE607A1E5258C1002C7A83 /* PSDashboardViewController.swift in Sources */,
 				B2FEF4AE1E4E49D40034CFD3 /* Hero.swift in Sources */,
 				B21A14261E3B953E0023CA71 /* MVEventCollectionViewCell.swift in Sources */,
 				B21A143A1E3BF9030023CA71 /* MVComicCollectionViewCell.swift in Sources */,
 				B21A14371E3BF2300023CA71 /* MVComicCardView.swift in Sources */,
 				B21A14411E3C0B680023CA71 /* MVTextObject.swift in Sources */,
 				B24A89C61E3A969500A46C8F /* MVResponse.swift in Sources */,
+				B2BE607D1E525942002C7A83 /* PSFriendCollectionViewCell.swift in Sources */,
 				B24A89C41E3A95CB00A46C8F /* MVPaginatedResponse.swift in Sources */,
 				B24A89BB1E3A8B1B00A46C8F /* Constants.swift in Sources */,
 				B24A89B91E3A8AE500A46C8F /* RouteType.swift in Sources */,
 				B24A89B31E3A89BE00A46C8F /* MVComic.swift in Sources */,
 				B21A142F1E3BC6050023CA71 /* MVEventDetailTableViewCell.swift in Sources */,
 				B24A89AF1E3A827400A46C8F /* String.swift in Sources */,
+				B2BE60761E5252AD002C7A83 /* PSGameCollectionViewCell.swift in Sources */,
 				B2B0A33E1E520FA100980344 /* LoadingCellTableViewCell.swift in Sources */,
 				B21A143D1E3BFEA90023CA71 /* MVEventComicsViewController.swift in Sources */,
 				B21A14241E3B93390023CA71 /* R.generated.swift in Sources */,

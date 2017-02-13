@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Examples-->
         <scene sceneID="Wje-0x-r6c">
             <objects>
                 <tableViewController id="8MS-5v-1hG" sceneMemberID="viewController">
@@ -60,6 +60,26 @@
                                             <segue destination="rQt-vR-khU" kind="show" id="Nxd-b3-rQQ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="h7I-uE-ByU" style="IBUITableViewCellStyleDefault" id="7Q2-9n-Hjb">
+                                        <rect key="frame" x="0.0" y="88" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Q2-9n-Hjb" id="RVm-P5-s0e">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Play Station" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="h7I-uE-ByU">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="lKm-mH-8Pf" kind="show" id="vb3-Ll-jbQ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -68,7 +88,7 @@
                             <outlet property="delegate" destination="8MS-5v-1hG" id="SLQ-na-u6m"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="qVL-E9-omD"/>
+                    <navigationItem key="navigationItem" title="Examples" id="qVL-E9-omD"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6A3-JE-Qcu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,7 +100,7 @@
                 <viewControllerPlaceholder storyboardName="Marvel" id="e3a-Zf-yUu" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XPY-uD-2dI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="790" y="-173"/>
+            <point key="canvasLocation" x="790" y="-76"/>
         </scene>
         <!--Onboarding-->
         <scene sceneID="qhA-wH-80e">
@@ -88,14 +108,22 @@
                 <viewControllerPlaceholder storyboardName="Onboarding" id="rQt-vR-khU" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oj5-F3-4IN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="814" y="129"/>
+            <point key="canvasLocation" x="812" y="108"/>
+        </scene>
+        <!--PlayStation-->
+        <scene sceneID="hJI-uq-hh5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="PlayStation" id="lKm-mH-8Pf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zrl-Go-uoy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="813" y="285"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="knX-A3-8dj">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lEp-g7-RKE" customClass="NavigationViewController" customModule="TestingHero" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="GyT-ee-Qpn">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GyT-ee-Qpn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

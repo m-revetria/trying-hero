@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PSGameCell" id="gTV-IL-0wX" customClass="PSGameCollectionViewCell" customModule="TestingHero" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="136" height="180"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="136" height="180"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ndh-fW-dha">
+                        <rect key="frame" x="0.0" y="0.0" width="136" height="180"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kif-jP-rwO">
+                                <rect key="frame" x="4" y="4" width="128" height="172"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="watch_dog" translatesAutoresizingMaskIntoConstraints="NO" id="vcW-05-onn">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="172"/>
+                                    </imageView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T8j-RV-fSw">
+                                        <rect key="frame" x="0.0" y="86" width="128" height="86"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WATCH DOG 2" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hC6-hp-Kxp">
+                                        <rect key="frame" x="12" y="112" width="104" height="48"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="vcW-05-onn" secondAttribute="trailing" id="3sU-jO-J36"/>
+                                    <constraint firstAttribute="bottom" secondItem="vcW-05-onn" secondAttribute="bottom" id="8I0-Bm-QTL"/>
+                                    <constraint firstAttribute="bottom" secondItem="hC6-hp-Kxp" secondAttribute="bottom" constant="12" id="9TI-40-XoK"/>
+                                    <constraint firstItem="vcW-05-onn" firstAttribute="leading" secondItem="Kif-jP-rwO" secondAttribute="leading" id="Pp1-Gv-yHa"/>
+                                    <constraint firstItem="T8j-RV-fSw" firstAttribute="top" secondItem="Kif-jP-rwO" secondAttribute="centerY" id="Vjf-6N-qnr"/>
+                                    <constraint firstItem="vcW-05-onn" firstAttribute="top" secondItem="Kif-jP-rwO" secondAttribute="top" id="War-gJ-fvC"/>
+                                    <constraint firstAttribute="trailing" secondItem="T8j-RV-fSw" secondAttribute="trailing" id="WeM-gh-AX4"/>
+                                    <constraint firstItem="hC6-hp-Kxp" firstAttribute="leading" secondItem="Kif-jP-rwO" secondAttribute="leading" constant="12" id="or9-1p-M9W"/>
+                                    <constraint firstAttribute="trailing" secondItem="hC6-hp-Kxp" secondAttribute="trailing" constant="12" id="qBf-XN-YYt"/>
+                                    <constraint firstAttribute="bottom" secondItem="T8j-RV-fSw" secondAttribute="bottom" id="qQV-yU-Yhb"/>
+                                    <constraint firstItem="T8j-RV-fSw" firstAttribute="leading" secondItem="Kif-jP-rwO" secondAttribute="leading" id="ttE-MO-IMU"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                        <real key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                        <size key="value" width="0.0" height="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                        <color key="value" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                        <real key="value" value="100"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Kif-jP-rwO" firstAttribute="leading" secondItem="ndh-fW-dha" secondAttribute="leading" constant="4" id="Dsl-GJ-JOx"/>
+                            <constraint firstItem="Kif-jP-rwO" firstAttribute="top" secondItem="ndh-fW-dha" secondAttribute="top" constant="4" id="H7i-bz-gJ8"/>
+                            <constraint firstAttribute="trailing" secondItem="Kif-jP-rwO" secondAttribute="trailing" constant="4" id="RPI-XI-Qma"/>
+                            <constraint firstAttribute="bottom" secondItem="Kif-jP-rwO" secondAttribute="bottom" constant="4" id="XzG-ce-sJH"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ndh-fW-dha" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Duc-VK-9e0"/>
+                <constraint firstAttribute="trailing" secondItem="ndh-fW-dha" secondAttribute="trailing" id="TLe-Zl-iY6"/>
+                <constraint firstAttribute="bottom" secondItem="ndh-fW-dha" secondAttribute="bottom" id="hbo-Ib-GyP"/>
+                <constraint firstItem="ndh-fW-dha" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="peM-xF-lCC"/>
+            </constraints>
+            <connections>
+                <outlet property="imageView" destination="vcW-05-onn" id="XyZ-IV-y5f"/>
+                <outlet property="labelBackgroundView" destination="T8j-RV-fSw" id="Zjh-iP-LoK"/>
+                <outlet property="titleLabel" destination="hC6-hp-Kxp" id="kC1-u6-Rg4"/>
+            </connections>
+            <point key="canvasLocation" x="-115" y="-88"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="watch_dog" width="142" height="187"/>
+    </resources>
+</document>

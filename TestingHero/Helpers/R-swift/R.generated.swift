@@ -31,12 +31,30 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 3 images.
+  /// This `R.image` struct is generated, and contains static references to 12 images.
   struct image {
     /// Image `Back`.
     static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "Back")
+    /// Image `dishonored`.
+    static let dishonored = Rswift.ImageResource(bundle: R.hostingBundle, name: "dishonored")
+    /// Image `doom`.
+    static let doom = Rswift.ImageResource(bundle: R.hostingBundle, name: "doom")
+    /// Image `fifa17`.
+    static let fifa17 = Rswift.ImageResource(bundle: R.hostingBundle, name: "fifa17")
+    /// Image `gtav`.
+    static let gtav = Rswift.ImageResource(bundle: R.hostingBundle, name: "gtav")
     /// Image `marvel-logo`.
     static let marvelLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "marvel-logo")
+    /// Image `ps-background`.
+    static let psBackground = Rswift.ImageResource(bundle: R.hostingBundle, name: "ps-background")
+    /// Image `ps-icon`.
+    static let psIcon = Rswift.ImageResource(bundle: R.hostingBundle, name: "ps-icon")
+    /// Image `re7`.
+    static let re7 = Rswift.ImageResource(bundle: R.hostingBundle, name: "re7")
+    /// Image `user`.
+    static let user = Rswift.ImageResource(bundle: R.hostingBundle, name: "user")
+    /// Image `watch_dog`.
+    static let watch_dog = Rswift.ImageResource(bundle: R.hostingBundle, name: "watch_dog")
     /// Image `xl-logo`.
     static let xlLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "xl-logo")
     
@@ -45,9 +63,54 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.back, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "dishonored", bundle: ..., traitCollection: ...)`
+    static func dishonored(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.dishonored, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "doom", bundle: ..., traitCollection: ...)`
+    static func doom(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.doom, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "fifa17", bundle: ..., traitCollection: ...)`
+    static func fifa17(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.fifa17, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "gtav", bundle: ..., traitCollection: ...)`
+    static func gtav(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gtav, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "marvel-logo", bundle: ..., traitCollection: ...)`
     static func marvelLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.marvelLogo, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ps-background", bundle: ..., traitCollection: ...)`
+    static func psBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.psBackground, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "ps-icon", bundle: ..., traitCollection: ...)`
+    static func psIcon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.psIcon, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "re7", bundle: ..., traitCollection: ...)`
+    static func re7(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.re7, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "user", bundle: ..., traitCollection: ...)`
+    static func user(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.user, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "watch_dog", bundle: ..., traitCollection: ...)`
+    static func watch_dog(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.watch_dog, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "xl-logo", bundle: ..., traitCollection: ...)`
@@ -58,7 +121,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
   struct nib {
     /// Nib `LoadingCellTableViewCell`.
     static let loadingCellTableViewCell = _R.nib._LoadingCellTableViewCell()
@@ -68,6 +131,10 @@ struct R: Rswift.Validatable {
     static let mVEventCollectionViewCell = _R.nib._MVEventCollectionViewCell()
     /// Nib `MVEventDetailTableViewCell`.
     static let mVEventDetailTableViewCell = _R.nib._MVEventDetailTableViewCell()
+    /// Nib `PSFriendCollectionViewCell`.
+    static let pSFriendCollectionViewCell = _R.nib._PSFriendCollectionViewCell()
+    /// Nib `PSGameCollectionViewCell`.
+    static let pSGameCollectionViewCell = _R.nib._PSGameCollectionViewCell()
     
     /// `UINib(name: "LoadingCellTableViewCell", in: bundle)`
     static func loadingCellTableViewCell(_: Void = ()) -> UIKit.UINib {
@@ -89,10 +156,20 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.mVEventDetailTableViewCell)
     }
     
+    /// `UINib(name: "PSFriendCollectionViewCell", in: bundle)`
+    static func pSFriendCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.pSFriendCollectionViewCell)
+    }
+    
+    /// `UINib(name: "PSGameCollectionViewCell", in: bundle)`
+    static func pSGameCollectionViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.pSGameCollectionViewCell)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 6 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `LoadingCell`.
     static let loadingCell: Rswift.ReuseIdentifier<LoadingCellTableViewCell> = Rswift.ReuseIdentifier(identifier: "LoadingCell")
@@ -102,11 +179,15 @@ struct R: Rswift.Validatable {
     static let mVEventCell: Rswift.ReuseIdentifier<MVEventCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "MVEventCell")
     /// Reuse identifier `MVEventDetailCell`.
     static let mVEventDetailCell: Rswift.ReuseIdentifier<MVEventDetailTableViewCell> = Rswift.ReuseIdentifier(identifier: "MVEventDetailCell")
+    /// Reuse identifier `PSFriendCell`.
+    static let pSFriendCell: Rswift.ReuseIdentifier<PSFriendCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "PSFriendCell")
+    /// Reuse identifier `PSGameCell`.
+    static let pSGameCell: Rswift.ReuseIdentifier<PSGameCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "PSGameCell")
     
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 3 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 4 view controllers.
   struct segue {
     /// This struct is generated for `MVEventViewController`, and contains static references to 1 segues.
     struct mVEventViewController {
@@ -153,10 +234,25 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    /// This struct is generated for `PSDashboardViewController`, and contains static references to 1 segues.
+    struct pSDashboardViewController {
+      /// Segue identifier `ShowFriendOptions`.
+      static let showFriendOptions: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, PSDashboardViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "ShowFriendOptions")
+      
+      /// Optionally returns a typed version of segue `ShowFriendOptions`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showFriendOptions(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, PSDashboardViewController, UIKit.UIViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.pSDashboardViewController.showFriendOptions, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
@@ -166,6 +262,8 @@ struct R: Rswift.Validatable {
     static let marvel = _R.storyboard.marvel()
     /// Storyboard `Onboarding`.
     static let onboarding = _R.storyboard.onboarding()
+    /// Storyboard `PlayStation`.
+    static let playStation = _R.storyboard.playStation()
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
@@ -185,6 +283,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Onboarding", bundle: ...)`
     static func onboarding(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.onboarding)
+    }
+    
+    /// `UIStoryboard(name: "PlayStation", bundle: ...)`
+    static func playStation(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.playStation)
     }
     
     fileprivate init() {}
@@ -217,6 +320,8 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _MVEventDetailTableViewCell.validate()
+      try _PSGameCollectionViewCell.validate()
+      try _PSFriendCollectionViewCell.validate()
     }
     
     struct _LoadingCellTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
@@ -279,12 +384,49 @@ struct _R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    struct _PSFriendCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = PSFriendCollectionViewCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "PSFriendCell"
+      let name = "PSFriendCollectionViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> PSFriendCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PSFriendCollectionViewCell
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "user") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user' is used in nib 'PSFriendCollectionViewCell', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _PSGameCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType, Rswift.Validatable {
+      typealias ReusableType = PSGameCollectionViewCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "PSGameCell"
+      let name = "PSGameCollectionViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> PSGameCollectionViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PSGameCollectionViewCell
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "watch_dog") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'watch_dog' is used in nib 'PSGameCollectionViewCell', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try marvel.validate()
+      try playStation.validate()
       try onboarding.validate()
     }
     
@@ -335,6 +477,21 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "Back") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Back' is used in storyboard 'Onboarding', but couldn't be loaded.") }
         if UIKit.UIImage(named: "xl-logo") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'xl-logo' is used in storyboard 'Onboarding', but couldn't be loaded.") }
         if _R.storyboard.onboarding().onboardingSecondViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'onboardingSecondViewController' could not be loaded from storyboard 'Onboarding' as 'OnboardingSecondViewController'.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct playStation: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = PSDashboardViewController
+      
+      let bundle = R.hostingBundle
+      let name = "PlayStation"
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "ps-icon") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ps-icon' is used in storyboard 'PlayStation', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "ps-background") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ps-background' is used in storyboard 'PlayStation', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "user") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user' is used in storyboard 'PlayStation', but couldn't be loaded.") }
       }
       
       fileprivate init() {}
