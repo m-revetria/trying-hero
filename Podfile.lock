@@ -5,10 +5,13 @@ PODS:
   - Decodable (0.5)
   - DynamicColor (3.2.1)
   - Eureka (2.0.0-beta.1)
-  - Hero (0.1.1)
-  - Material (2.4.10):
-    - Material/Core (= 2.4.10)
-  - Material/Core (2.4.10)
+  - Hero (0.3.1)
+  - Material (2.4.16):
+    - Material/Core (= 2.4.16)
+  - Material/Core (2.4.16)
+  - Motion (1.0.2):
+    - Motion/Core (= 1.0.2)
+  - Motion/Core (1.0.2)
   - Opera (1.0.0):
     - Alamofire (~> 4.0)
     - RxCocoa (~> 3.0.1)
@@ -24,6 +27,7 @@ PODS:
   - RxCocoa (3.0.1):
     - RxSwift (~> 3.0)
   - RxSwift (3.0.1)
+  - Shimmer (1.0.2)
   - XLSwiftKit (2.0.0)
 
 DEPENDENCIES:
@@ -34,11 +38,13 @@ DEPENDENCIES:
   - Eureka (from `https://github.com/xmartlabs/Eureka.git`, branch `master`)
   - Hero
   - Material
+  - Motion
   - Opera (from `https://github.com/xmartlabs/Opera.git`, branch `Swift3`)
   - R.swift
   - RxAlamofire
   - RxCocoa
   - RxSwift
+  - Shimmer
   - XLSwiftKit
 
 EXTERNAL SOURCES:
@@ -51,7 +57,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   Eureka:
-    :commit: c8288eae13678f9b5467f7580b052059a77a884b
+    :commit: 13fefe5d21aad4322f0e12957c4c6323066f6cb5
     :git: https://github.com/xmartlabs/Eureka.git
   Opera:
     :commit: c81c84dad0d9a96bb7f6017fdd6a30f23f4492d7
@@ -63,16 +69,18 @@ SPEC CHECKSUMS:
   Decodable: 7c90acc68d357b71d0d6efc120faf9c53c644b7e
   DynamicColor: 4786d650c69da6c3f2cbfe068348288ec4e5521f
   Eureka: d014adf16406745e1a78d5790ea37ed130a0a8e5
-  Hero: b855122bc80662e7446300ca18c9e4bcb0679540
-  Material: ef1e6da2e242d582205c87847a5346138894a633
+  Hero: 278045543e7e8fcbf331e6493a51f97469a2ff08
+  Material: 84645fb4c9409c3db76bd7c8e1fd00dc4a76c144
+  Motion: d9b1f29e7e08df32a1b03bd194f785e51b3a40cf
   Opera: 5018ced09d6caadc4c1076ea806c940b558761a2
   R.swift: 207a372a2b5977caef440c696a368009460641d1
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   RxAlamofire: bc53604b29fd2d220cfaa490c736cc4500819f34
   RxCocoa: 15a52fc590dcc700cb4a690a633b5c5184ce3a78
   RxSwift: af5680055c4ad04480189c52d28385b1029493a6
+  Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
   XLSwiftKit: 4d48322a602120dc6300d58d7fb07b873e223c1c
 
-PODFILE CHECKSUM: 1bb8525c85a105dca4f147d07e809fdf9cbd8971
+PODFILE CHECKSUM: 9f3bd59d099003029bc33e766aedb7af40b641c0
 
 COCOAPODS: 1.0.1

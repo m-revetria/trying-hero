@@ -22,70 +22,86 @@
 
 import UIKit
 
-public class HeroDefaultAnimator:HeroAnimator{
-  var context:HeroContext!
-  var viewContexts:[UIView: HeroDefaultAnimatorViewContext] = [:]
+public class HeroDefaultAnimator: HeroAnimator {
+  weak public var context: HeroContext!
+  var viewContexts: [UIView: HeroDefaultAnimatorViewContext] = [:]
 
-  public func seekTo(timePassed:TimeInterval) {
-    for viewContext in viewContexts.values{
+  public func seekTo(timePassed: TimeInterval) {
+    for viewContext in viewContexts.values {
       viewContext.seek(timePassed: timePassed)
     }
   }
-  
-  public func resume(timePassed:TimeInterval, reverse:Bool) -> TimeInterval{
-    var duration:TimeInterval = 0
-    for view in viewContexts.keys{
-      viewContexts[view]!.resume(timePassed: timePassed, reverse: reverse)
-      duration = max(duration, viewContexts[view]!.duration)
+
+  public func resume(timePassed: TimeInterval, reverse: Bool) -> TimeInterval {
+    var duration: TimeInterval = 0
+    for (_, context) in viewContexts {
+      context.resume(timePassed: timePassed, reverse: reverse)
+      duration = max(duration, context.duration)
     }
     return duration
   }
-  
-  public func temporarilySet(view:UIView, targetState:HeroTargetState){
-    guard viewContexts[view] != nil else {
-      print("HERO: unable to temporarily set to \(view). The view must be running at least one animation before it can be interactively changed")
-      return
+
+  public func apply(state: HeroTargetState, to view: UIView) {
+    if let context = viewContexts[view] {
+      context.apply(state:state)
     }
-    viewContexts[view]!.temporarilySet(targetState:targetState)
   }
 
-  public func canAnimate(context:HeroContext, view:UIView, appearing:Bool) -> Bool{
+  public func canAnimate(view: UIView, appearing: Bool) -> Bool {
     guard let state = context[view] else { return false }
-    return state.position != nil ||
-           state.size != nil ||
-           state.transform != nil ||
-           state.cornerRadius != nil ||
-           state.opacity != nil
+    return  state.position != nil ||
+            state.size != nil ||
+            state.transform != nil ||
+            state.cornerRadius != nil ||
+            state.opacity != nil ||
+            state.overlay != nil ||
+            state.borderColor != nil ||
+            state.borderWidth != nil ||
+            state.shadowOpacity != nil ||
+            state.shadowRadius != nil ||
+            state.shadowOffset != nil ||
+            state.shadowColor != nil ||
+            state.shadowPath != nil
   }
 
-  public func animate(context:HeroContext, fromViews:[UIView], toViews:[UIView]) -> TimeInterval{
-    self.context = context
-    
-    var duration:TimeInterval = 0
+  public func animate(fromViews: [UIView], toViews: [UIView]) -> TimeInterval {
+    var duration: TimeInterval = 0
 
     // animate
-    for v in fromViews{
-      animate(view: v, appearing: false)
+    for v in fromViews { animate(view: v, appearing: false) }
+    for v in toViews { animate(view: v, appearing: true) }
+
+    // infinite duration means matching the duration of the longest animation
+    var infiniteDurationViewContexts = [HeroDefaultAnimatorViewContext]()
+    for viewContext in viewContexts.values {
+      if viewContext.duration == .infinity {
+        infiniteDurationViewContexts.append(viewContext)
+      } else {
+        duration = max(duration, viewContext.duration)
+      }
     }
-    for v in toViews{
-      animate(view: v, appearing: true)
+
+    for viewContexts in infiniteDurationViewContexts {
+      duration = max(duration, viewContexts.optimizedDurationAndTimingFunction().duration)
     }
-    
-    for viewContext in viewContexts.values{
-      duration = max(duration, viewContext.duration)
+
+    for viewContexts in infiniteDurationViewContexts {
+      viewContexts.apply(state: [.duration(duration)])
     }
 
     return duration
   }
-  
-  func animate(view:UIView, appearing:Bool){
+
+  func animate(view: UIView, appearing: Bool) {
     let snapshot = context.snapshotView(for: view)
     let viewContext = HeroDefaultAnimatorViewContext(animator:self, snapshot: snapshot, targetState: context[view]!, appearing: appearing)
     viewContexts[view] = viewContext
   }
-  
-  public func clean(){
-    context = nil
+
+  public func clean() {
+    for vc in viewContexts.values {
+      vc.clean()
+    }
     viewContexts.removeAll()
   }
 }

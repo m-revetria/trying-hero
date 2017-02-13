@@ -12,11 +12,11 @@ import Opera
 
 enum MVUrlType: String, Decodable {
 
-    case detail = "detail"
-    case inAppLink = "inAppLink"
-    case purchase = "purchase"
-    case reader = "reader"
-    case wiki = "wiki"
+    case detail
+    case inAppLink
+    case purchase
+    case reader
+    case wiki
 
 }
 
@@ -26,7 +26,6 @@ struct MVTypedUrl {
     let type: MVUrlType
 
 }
-
 
 extension MVTypedUrl: Decodable, OperaDecodable {
 

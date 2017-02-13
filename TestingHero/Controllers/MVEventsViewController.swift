@@ -79,7 +79,6 @@ extension MVEventsViewController: UICollectionViewDelegate {
 
         cell.eventCardView.imageCard.imageView?.heroID = "mv_event_cover"
 
-
         performSegue(withIdentifier: R.segue.mVEventsViewController.showEventDetail, sender: (event: event, cover: cell.eventCardView.imageCard.imageView?.image))
     }
 

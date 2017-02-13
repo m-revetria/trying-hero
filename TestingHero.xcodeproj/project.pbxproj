@@ -42,11 +42,17 @@
 		B24A89C21E3A957000A46C8F /* MarvelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A89C11E3A957000A46C8F /* MarvelManager.swift */; };
 		B24A89C41E3A95CB00A46C8F /* MVPaginatedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A89C31E3A95CB00A46C8F /* MVPaginatedResponse.swift */; };
 		B24A89C61E3A969500A46C8F /* MVResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A89C51E3A969500A46C8F /* MVResponse.swift */; };
-		B24A89CD1E3A9D9300A46C8F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B24A89CC1E3A9D9300A46C8F /* Info.plist */; };
+		B2B0A33E1E520FA100980344 /* LoadingCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B0A33C1E520FA100980344 /* LoadingCellTableViewCell.swift */; };
+		B2B0A33F1E520FA100980344 /* LoadingCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B0A33D1E520FA100980344 /* LoadingCellTableViewCell.xib */; };
 		B2F95CE51E3A688400E61BFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F95CE41E3A688400E61BFF /* AppDelegate.swift */; };
 		B2F95CEA1E3A688400E61BFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F95CE81E3A688400E61BFF /* Main.storyboard */; };
 		B2F95CEC1E3A688400E61BFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F95CEB1E3A688400E61BFF /* Assets.xcassets */; };
 		B2F95CEF1E3A688400E61BFF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F95CED1E3A688400E61BFF /* LaunchScreen.storyboard */; };
+		B2FEF4A51E4E2CB60034CFD3 /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2FEF4A41E4E2CB60034CFD3 /* Onboarding.storyboard */; };
+		B2FEF4A81E4E30E40034CFD3 /* OnboardingStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FEF4A71E4E30E40034CFD3 /* OnboardingStartViewController.swift */; };
+		B2FEF4AA1E4E37820034CFD3 /* OnboardingSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FEF4A91E4E37820034CFD3 /* OnboardingSecondViewController.swift */; };
+		B2FEF4AC1E4E3CE50034CFD3 /* OnboardingHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FEF4AB1E4E3CE50034CFD3 /* OnboardingHomeViewController.swift */; };
+		B2FEF4AE1E4E49D40034CFD3 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FEF4AD1E4E49D40034CFD3 /* Hero.swift */; };
 		B70225CC57470A2621D8B073 /* Pods_TestingHero.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52FB405F27FA31A20FFE7B4F /* Pods_TestingHero.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,7 +62,7 @@
 		B21A14161E3B8DD10023CA71 /* Marvel.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Marvel.storyboard; path = Storyboards/Marvel.storyboard; sourceTree = "<group>"; };
 		B21A14181E3B8EA70023CA71 /* MVEventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVEventsViewController.swift; path = Controllers/MVEventsViewController.swift; sourceTree = "<group>"; };
 		B21A141C1E3B90AA0023CA71 /* MVEventCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVEventCardView.swift; path = Views/MVEventCardView.swift; sourceTree = "<group>"; };
-		B21A14231E3B93390023CA71 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = Helpers/R.swift/R.generated.swift; sourceTree = "<group>"; };
+		B21A14231E3B93390023CA71 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = "Helpers/R-swift/R.generated.swift"; sourceTree = "<group>"; };
 		B21A14251E3B953E0023CA71 /* MVEventCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVEventCollectionViewCell.swift; path = Views/MVEventCollectionViewCell.swift; sourceTree = "<group>"; };
 		B21A14271E3B956F0023CA71 /* MVEventCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MVEventCollectionViewCell.xib; path = Views/MVEventCollectionViewCell.xib; sourceTree = "<group>"; };
 		B21A14291E3BA64B0023CA71 /* MVEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVEventViewController.swift; path = Controllers/MVEventViewController.swift; sourceTree = "<group>"; };
@@ -90,11 +96,18 @@
 		B24A89C51E3A969500A46C8F /* MVResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVResponse.swift; path = Models/MVResponse.swift; sourceTree = "<group>"; };
 		B24A89CB1E3A9D9300A46C8F /* TestingHero-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestingHero-Bridging-Header.h"; path = "SupportingFiles/TestingHero-Bridging-Header.h"; sourceTree = "<group>"; };
 		B24A89CC1E3A9D9300A46C8F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
+		B2B0A33C1E520FA100980344 /* LoadingCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingCellTableViewCell.swift; path = Views/LoadingCellTableViewCell.swift; sourceTree = "<group>"; };
+		B2B0A33D1E520FA100980344 /* LoadingCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadingCellTableViewCell.xib; path = Views/LoadingCellTableViewCell.xib; sourceTree = "<group>"; };
 		B2F95CE11E3A688400E61BFF /* TestingHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F95CE41E3A688400E61BFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F95CE91E3A688400E61BFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B2F95CEB1E3A688400E61BFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2F95CEE1E3A688400E61BFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B2FEF4A41E4E2CB60034CFD3 /* Onboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Onboarding.storyboard; path = Storyboards/Onboarding.storyboard; sourceTree = "<group>"; };
+		B2FEF4A71E4E30E40034CFD3 /* OnboardingStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingStartViewController.swift; path = Controllers/OnboardingStartViewController.swift; sourceTree = "<group>"; };
+		B2FEF4A91E4E37820034CFD3 /* OnboardingSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingSecondViewController.swift; path = Controllers/OnboardingSecondViewController.swift; sourceTree = "<group>"; };
+		B2FEF4AB1E4E3CE50034CFD3 /* OnboardingHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingHomeViewController.swift; path = Controllers/OnboardingHomeViewController.swift; sourceTree = "<group>"; };
+		B2FEF4AD1E4E49D40034CFD3 /* Hero.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Hero.swift; path = Helpers/Hero.swift; sourceTree = "<group>"; };
 		CE13D8907A726A4FFE617025 /* Pods-TestingHero.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestingHero.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestingHero/Pods-TestingHero.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				B21A141E1E3B90AD0023CA71 /* Marvel */,
+				B2B0A33B1E520F0100980344 /* Onboarding */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -152,12 +166,12 @@
 			name = Marvel;
 			sourceTree = "<group>";
 		};
-		B21A14211E3B91410023CA71 /* R.swift */ = {
+		B21A14211E3B91410023CA71 /* R-swift */ = {
 			isa = PBXGroup;
 			children = (
 				B21A14231E3B93390023CA71 /* R.generated.swift */,
 			);
-			name = R.swift;
+			name = "R-swift";
 			sourceTree = "<group>";
 		};
 		B21A142B1E3BB3080023CA71 /* Base */ = {
@@ -173,6 +187,7 @@
 			children = (
 				B21A142B1E3BB3080023CA71 /* Base */,
 				B21A141A1E3B8EA90023CA71 /* Marvel */,
+				B2FEF4A61E4E30BA0034CFD3 /* Onboarding */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -180,7 +195,7 @@
 		B24A89981E3A7A2500A46C8F /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				B21A14211E3B91410023CA71 /* R.swift */,
+				B21A14211E3B91410023CA71 /* R-swift */,
 				B24A89AB1E3A818600A46C8F /* Extensions */,
 				B24A89BA1E3A8B1B00A46C8F /* Constants.swift */,
 			);
@@ -212,6 +227,7 @@
 				B2F95CED1E3A688400E61BFF /* LaunchScreen.storyboard */,
 				B2F95CE81E3A688400E61BFF /* Main.storyboard */,
 				B21A14161E3B8DD10023CA71 /* Marvel.storyboard */,
+				B2FEF4A41E4E2CB60034CFD3 /* Onboarding.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -258,6 +274,7 @@
 				B24A89AE1E3A827400A46C8F /* String.swift */,
 				B24A89AC1E3A819900A46C8F /* URL.swift */,
 				B21A14321E3BE1630023CA71 /* RxSwift.swift */,
+				B2FEF4AD1E4E49D40034CFD3 /* Hero.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -276,6 +293,15 @@
 				52FB405F27FA31A20FFE7B4F /* Pods_TestingHero.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B2B0A33B1E520F0100980344 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B2B0A33C1E520FA100980344 /* LoadingCellTableViewCell.swift */,
+				B2B0A33D1E520FA100980344 /* LoadingCellTableViewCell.xib */,
+			);
+			name = Onboarding;
 			sourceTree = "<group>";
 		};
 		B2F95CD81E3A688400E61BFF = {
@@ -313,6 +339,16 @@
 			path = TestingHero;
 			sourceTree = "<group>";
 		};
+		B2FEF4A61E4E30BA0034CFD3 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B2FEF4A71E4E30E40034CFD3 /* OnboardingStartViewController.swift */,
+				B2FEF4A91E4E37820034CFD3 /* OnboardingSecondViewController.swift */,
+				B2FEF4AB1E4E3CE50034CFD3 /* OnboardingHomeViewController.swift */,
+			);
+			name = Onboarding;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,7 +357,8 @@
 			buildConfigurationList = B2F95CF31E3A688400E61BFF /* Build configuration list for PBXNativeTarget "TestingHero" */;
 			buildPhases = (
 				8F6955143DEB4CE688D59129 /* [CP] Check Pods Manifest.lock */,
-				B21A14221E3B91B50023CA71 /* R.swift */,
+				B22D1E751E3F86030056732B /* R.Swift */,
+				B22D1E741E3F83EB0056732B /* SwiftLint */,
 				B2F95CDD1E3A688400E61BFF /* Sources */,
 				B2F95CDE1E3A688400E61BFF /* Frameworks */,
 				B2F95CDF1E3A688400E61BFF /* Resources */,
@@ -378,7 +415,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B24A89CD1E3A9D9300A46C8F /* Info.plist in Resources */,
+				B2B0A33F1E520FA100980344 /* LoadingCellTableViewCell.xib in Resources */,
 				B21A14171E3B8DD10023CA71 /* Marvel.storyboard in Resources */,
 				B21A14281E3B956F0023CA71 /* MVEventCollectionViewCell.xib in Resources */,
 				B21A143B1E3BF9030023CA71 /* MVComicCollectionViewCell.xib in Resources */,
@@ -386,6 +423,7 @@
 				B2F95CEC1E3A688400E61BFF /* Assets.xcassets in Resources */,
 				B2F95CEA1E3A688400E61BFF /* Main.storyboard in Resources */,
 				B21A14311E3BC89D0023CA71 /* MVEventDetailTableViewCell.xib in Resources */,
+				B2FEF4A51E4E2CB60034CFD3 /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,19 +460,33 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		B21A14221E3B91B50023CA71 /* R.swift */ = {
+		B22D1E741E3F83EB0056732B /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = R.swift;
+			name = SwiftLint;
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT/TestingHero/Helpers/R.swift\"\n";
+			shellScript = "if which swiftlint >/dev/null; then\nswiftlint\nelse\necho \"SwiftLint does not exist, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+		B22D1E751E3F86030056732B /* R.Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = R.Swift;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT/TestingHero/Helpers/R-Swift\"";
 		};
 		C1DF533E707A1B0BFFF3781E /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -460,13 +512,16 @@
 			files = (
 				B21A143F1E3C02940023CA71 /* MVTypedDate.swift in Sources */,
 				B24A89B51E3A8A3E00A46C8F /* NetworkManager.swift in Sources */,
+				B2FEF4A81E4E30E40034CFD3 /* OnboardingStartViewController.swift in Sources */,
 				B21A14191E3B8EA70023CA71 /* MVEventsViewController.swift in Sources */,
 				B21A142A1E3BA64B0023CA71 /* MVEventViewController.swift in Sources */,
 				B21A142D1E3BB3280023CA71 /* NavigationViewController.swift in Sources */,
 				B24A89AA1E3A80D300A46C8F /* MVCollection.swift in Sources */,
+				B2FEF4AA1E4E37820034CFD3 /* OnboardingSecondViewController.swift in Sources */,
 				B24A89B71E3A8A7500A46C8F /* MVAPI.swift in Sources */,
 				B24A89A81E3A808C00A46C8F /* MVCharacter.swift in Sources */,
 				B24A89A41E3A7EAE00A46C8F /* MVTypedUrl.swift in Sources */,
+				B2FEF4AE1E4E49D40034CFD3 /* Hero.swift in Sources */,
 				B21A14261E3B953E0023CA71 /* MVEventCollectionViewCell.swift in Sources */,
 				B21A143A1E3BF9030023CA71 /* MVComicCollectionViewCell.swift in Sources */,
 				B21A14371E3BF2300023CA71 /* MVComicCardView.swift in Sources */,
@@ -478,12 +533,14 @@
 				B24A89B31E3A89BE00A46C8F /* MVComic.swift in Sources */,
 				B21A142F1E3BC6050023CA71 /* MVEventDetailTableViewCell.swift in Sources */,
 				B24A89AF1E3A827400A46C8F /* String.swift in Sources */,
+				B2B0A33E1E520FA100980344 /* LoadingCellTableViewCell.swift in Sources */,
 				B21A143D1E3BFEA90023CA71 /* MVEventComicsViewController.swift in Sources */,
 				B21A14241E3B93390023CA71 /* R.generated.swift in Sources */,
 				B21A141D1E3B90AA0023CA71 /* MVEventCardView.swift in Sources */,
 				B24A89BD1E3A91A000A46C8F /* RequestAdapter.swift in Sources */,
 				B24A89A61E3A7F8000A46C8F /* MVCreator.swift in Sources */,
 				B24A89C21E3A957000A46C8F /* MarvelManager.swift in Sources */,
+				B2FEF4AC1E4E3CE50034CFD3 /* OnboardingHomeViewController.swift in Sources */,
 				B24A89A11E3A7DC700A46C8F /* MVImage.swift in Sources */,
 				B24A89B11E3A884E00A46C8F /* MVStory.swift in Sources */,
 				B24A899F1E3A7C4700A46C8F /* MVEvent.swift in Sources */,

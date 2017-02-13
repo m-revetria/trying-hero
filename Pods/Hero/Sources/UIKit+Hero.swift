@@ -25,41 +25,36 @@ import UIKit
 fileprivate let parameterRegex = "(?:\\-?\\d+(\\.?\\d+)?)|\\w+"
 fileprivate let modifiersRegex = "(\\w+)(?:\\(([^\\)]*)\\))?"
 
-public extension UIView{
+public extension UIView {
   private struct AssociatedKeys {
-    static var HeroID    = "ht_heroID"
-    static var HeroModifiers = "ht_heroModifers"
-  }
-  
-  @IBInspectable public var heroID: String? {
-    get {
-      return objc_getAssociatedObject(self, &AssociatedKeys.HeroID) as? String
-    }
-    
-    set {
-      objc_setAssociatedObject(
-        self,
-        &AssociatedKeys.HeroID,
-        newValue as NSString?,
-        .OBJC_ASSOCIATION_RETAIN_NONATOMIC
-      )
-    }
-  }
-  public var heroModifiers: [HeroModifier]? {
-    get {
-      return objc_getAssociatedObject(self, &AssociatedKeys.HeroModifiers) as? [HeroModifier]
-    }
-    
-    set {
-      objc_setAssociatedObject(
-        self,
-        &AssociatedKeys.HeroModifiers,
-        newValue,
-        .OBJC_ASSOCIATION_RETAIN_NONATOMIC
-      )
-    }
+    static var heroID    = "heroID"
+    static var heroModifiers = "heroModifers"
+    static var heroStoredAlpha = "heroStoredAlpha"
   }
 
+  /**
+   **heroID** is the identifier for the view. When doing a transition between two view controllers,
+   Hero will search through all the subviews for both view controllers and matches views with the same **heroID**. 
+   
+   Whenever a pair is discovered,
+   Hero will automatically transit the views from source state to the destination state.
+   */
+  @IBInspectable public var heroID: String? {
+    get { return objc_getAssociatedObject(self, &AssociatedKeys.heroID) as? String }
+    set { objc_setAssociatedObject(self, &AssociatedKeys.heroID, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+  }
+
+  /**
+   Use **heroModifiers** to specify animations alongside the main transition. Checkout `HeroModifier.swift` for available modifiers.
+   */
+  public var heroModifiers: [HeroModifier]? {
+    get { return objc_getAssociatedObject(self, &AssociatedKeys.heroModifiers) as? [HeroModifier] }
+    set { objc_setAssociatedObject(self, &AssociatedKeys.heroModifiers, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+  }
+
+  /**
+   **heroModifierString** provides another way to set **heroModifiers**. It can be assigned through storyboard.
+   */
   @IBInspectable public var heroModifierString: String? {
     get { fatalError("Reverse lookup is not supported") }
     set {
@@ -68,7 +63,7 @@ public extension UIView{
         return
       }
       let modifierString = newValue as NSString
-      func matches(for regex: String, text:NSString) -> [NSTextCheckingResult] {
+      func matches(for regex: String, text: NSString) -> [NSTextCheckingResult] {
         do {
           let regex = try NSRegularExpression(pattern: regex)
           return regex.matches(in: text as String, range: NSRange(location: 0, length: text.length))
@@ -78,16 +73,16 @@ public extension UIView{
         }
       }
       var modifiers = [HeroModifier]()
-      for r in matches(for: modifiersRegex, text:modifierString){
+      for r in matches(for: modifiersRegex, text:modifierString) {
         var parameters = [String]()
-        if r.numberOfRanges > 2, r.rangeAt(2).location < modifierString.length{
+        if r.numberOfRanges > 2, r.rangeAt(2).location < modifierString.length {
           let parameterString = modifierString.substring(with: r.rangeAt(2)) as NSString
-          for r in matches(for: parameterRegex, text: parameterString){
+          for r in matches(for: parameterRegex, text: parameterString) {
             parameters.append(parameterString.substring(with: r.range))
           }
         }
         let name = modifierString.substring(with: r.rangeAt(1))
-        if let modifier = HeroModifier.from(name: name, parameters: parameters){
+        if let modifier = HeroModifier.from(name: name, parameters: parameters) {
           modifiers.append(modifier)
         }
       }
@@ -95,89 +90,245 @@ public extension UIView{
     }
   }
 
-  func slowSnapshotView() -> UIView{
+  internal func slowSnapshotView() -> UIView {
     UIGraphicsBeginImageContextWithOptions(bounds.size, isOpaque, 0)
     layer.render(in: UIGraphicsGetCurrentContext()!)
-//    drawHierarchy(in: bounds, afterScreenUpdates: true)
+
     let image = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
-    
+
     let imageView = UIImageView(image: image)
     imageView.frame = bounds
     let snapshotView = UIView(frame:bounds)
     snapshotView.addSubview(imageView)
     return snapshotView
   }
+
+  internal var flattenedViewHierarchy: [UIView] {
+    return [self] + subviews.flatMap { $0.flattenedViewHierarchy }
+  }
+
+  /// Used for .overFullScreen presentation
+  internal var heroStoredAlpha: CGFloat? {
+    get {
+      if let doubleValue = (objc_getAssociatedObject(self, &AssociatedKeys.heroStoredAlpha) as? NSNumber)?.doubleValue {
+        return CGFloat(doubleValue)
+      }
+      return nil
+    }
+    set {
+      if let newValue = newValue {
+        objc_setAssociatedObject(self, &AssociatedKeys.heroStoredAlpha, NSNumber(value:newValue.native), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+      } else {
+        objc_setAssociatedObject(self, &AssociatedKeys.heroStoredAlpha, nil, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+      }
+    }
+  }
 }
 
-internal extension NSObject{
+internal extension NSObject {
   func copyWithArchiver() -> Any? {
     return NSKeyedUnarchiver.unarchiveObject(with: NSKeyedArchiver.archivedData(withRootObject: self))!
   }
 }
 
-public extension UIViewController{
+public extension UIViewController {
+  private struct AssociatedKeys {
+    static var previousNavigationDelegate = "previousNavigationDelegate"
+    static var previousTabBarDelegate = "previousTabBarDelegate"
+    static var heroStoredSnapshots = "heroStoredSnapshots"
+  }
+
+  var previousNavigationDelegate: UINavigationControllerDelegate? {
+    get { return objc_getAssociatedObject(self, &AssociatedKeys.previousNavigationDelegate) as? UINavigationControllerDelegate }
+    set { objc_setAssociatedObject(self, &AssociatedKeys.previousNavigationDelegate, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+  }
+
+  var previousTabBarDelegate: UITabBarControllerDelegate? {
+    get { return objc_getAssociatedObject(self, &AssociatedKeys.previousTabBarDelegate) as? UITabBarControllerDelegate }
+    set { objc_setAssociatedObject(self, &AssociatedKeys.previousTabBarDelegate, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+  }
+
   @IBInspectable public var isHeroEnabled: Bool {
     get {
-      return ((transitioningDelegate as? Hero) != nil)
+      return transitioningDelegate is Hero
     }
-    
+
     set {
       guard newValue != isHeroEnabled else { return }
-      if newValue{
+      if newValue {
         transitioningDelegate = Hero.shared
-        if let navi = self as? UINavigationController{
+        if let navi = self as? UINavigationController {
+          previousNavigationDelegate = navi.delegate
           navi.delegate = Hero.shared
         }
-        if let tab = self as? UITabBarController{
+        if let tab = self as? UITabBarController {
+          previousTabBarDelegate = tab.delegate
           tab.delegate = Hero.shared
         }
       } else {
-        if isHeroEnabled {
-          transitioningDelegate = nil
+        transitioningDelegate = nil
+        if let navi = self as? UINavigationController, navi.delegate is Hero {
+          navi.delegate = previousNavigationDelegate
         }
-        if let navi = self as? UINavigationController, let _ = navi.delegate as? Hero{
-          navi.delegate = nil
-        }
-        if let tab = self as? UITabBarController, let _ = tab.delegate as? Hero{
-          tab.delegate = nil
+        if let tab = self as? UITabBarController, tab.delegate is Hero {
+          tab.delegate = previousTabBarDelegate
         }
       }
     }
   }
 
-  @IBAction public func ht_dismiss(_ sender:UIView){
-    dismiss(animated: true, completion: nil)
+  /// used for .overFullScreen presentation
+  internal var heroStoredSnapshots: [UIView]? {
+    get {
+      return objc_getAssociatedObject(self, &AssociatedKeys.heroStoredSnapshots) as? [UIView]
+    }
+    set {
+      objc_setAssociatedObject(self, &AssociatedKeys.heroStoredSnapshots, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
   }
-  
-  public func heroReplaceViewController(with next:UIViewController){
-    if let navigationController = navigationController {
-      var vcs = navigationController.childViewControllers
-      vcs.removeLast()
-      vcs.append(next)
-      navigationController.setViewControllers(vcs, animated: true)
+
+  @available(*, deprecated: 0.1.4, message: "use hero_dismissViewController instead")
+  @IBAction public func ht_dismiss(_ sender: UIView) {
+    hero_dismissViewController()
+  }
+
+  @available(*, deprecated: 0.1.4, message: "use hero_replaceViewController(with:) instead")
+  public func heroReplaceViewController(with next: UIViewController) {
+    hero_replaceViewController(with: next)
+  }
+
+  /**
+   Dismiss the current view controller with animation. Will perform a navigationController.popViewController 
+   if the current view controller is contained inside a navigationController
+   */
+  @IBAction public func hero_dismissViewController() {
+    if let navigationController = navigationController, navigationController.viewControllers.first != self {
+      navigationController.popViewController(animated: true)
     } else {
-      let parentVC = presentingViewController
-      let container = self.view.superview!
-      let oldTransitionDelegate = next.transitioningDelegate
-      next.isHeroEnabled = true
-      Hero.shared.transition(from: self, to: next, in: container) {
-        if (oldTransitionDelegate as? Hero) == nil{
-          next.isHeroEnabled = false
-          next.transitioningDelegate = oldTransitionDelegate
-        }
-        
-        UIApplication.shared.keyWindow?.addSubview(next.view)
-        
-        if let parentVC = parentVC {
-          self.dismiss(animated: false) {
-            parentVC.present(next, animated: false, completion:nil)
+      dismiss(animated: true, completion: nil)
+    }
+  }
+
+  /**
+   Unwind to the root view controller using Hero
+   */
+  @IBAction public func hero_unwindToRootViewController() {
+    hero_unwindToViewController { $0.presentingViewController == nil }
+  }
+
+  /**
+   Unwind to a specific view controller using Hero
+   */
+  public func hero_unwindToViewController(_ toViewController: UIViewController) {
+    hero_unwindToViewController { $0 == toViewController }
+  }
+
+  /**
+   Unwind to a view controller that responds to the given selector using Hero
+   */
+  public func hero_unwindToViewController(withSelector: Selector) {
+    hero_unwindToViewController { $0.responds(to: withSelector) }
+  }
+
+  /**
+   Unwind to a view controller with given class using Hero
+   */
+  public func hero_unwindToViewController(withClass: AnyClass) {
+    hero_unwindToViewController { $0.isKind(of: withClass) }
+  }
+
+  /**
+   Unwind to a view controller that the matchBlock returns true on.
+   */
+  public func hero_unwindToViewController(withMatchBlock: (UIViewController) -> Bool) {
+    var target: UIViewController? = nil
+    var current: UIViewController? = self
+
+    while target == nil && current != nil {
+      if let childViewControllers = (current as? UINavigationController)?.childViewControllers ?? current!.navigationController?.childViewControllers {
+        for vc in childViewControllers.reversed() {
+          if vc != self, withMatchBlock(vc) {
+            target = vc
+            break
           }
-        } else {
-          UIApplication.shared.keyWindow?.rootViewController = next
+        }
+      }
+      if target == nil {
+        current = current!.presentingViewController
+        if let vc = current, withMatchBlock(vc) == true {
+          target = vc
         }
       }
     }
+
+    if let target = target {
+      if target.presentedViewController != nil {
+        let _ = target.navigationController?.popToViewController(target, animated: false)
+
+        let fromVC = self.navigationController ?? self
+        let toVC = target.navigationController ?? target
+
+        if target.presentedViewController != fromVC {
+          // UIKit's UIViewController.dismiss will jump to target.presentedViewController then perform the dismiss.
+          // We overcome this behavior by inserting a snapshot into target.presentedViewController
+          // And also force Hero to use the current VC as the fromViewController
+          Hero.shared.fromViewController = fromVC
+          let snapshotView = fromVC.view.snapshotView(afterScreenUpdates: true)!
+          toVC.presentedViewController!.view.addSubview(snapshotView)
+        }
+
+        toVC.dismiss(animated: true, completion: nil)
+      } else {
+        let _ = target.navigationController?.popToViewController(target, animated: true)
+      }
+    } else {
+      // unwind target not found
+    }
+  }
+
+  /**
+   Replace the current view controller with another VC on the navigation/modal stack.
+   */
+  public func hero_replaceViewController(with next: UIViewController) {
+    if let navigationController = navigationController {
+      var vcs = navigationController.childViewControllers
+      if !vcs.isEmpty {
+        vcs.removeLast()
+        vcs.append(next)
+      }
+      if navigationController.isHeroEnabled {
+        Hero.shared.forceNotInteractive = true
+      }
+      navigationController.setViewControllers(vcs, animated: true)
+    } else if let container = view.superview {
+      let parentVC = presentingViewController
+      Hero.shared.transition(from: self, to: next, in: container) { finished in
+        if finished {
+          UIApplication.shared.keyWindow?.addSubview(next.view)
+
+          if let parentVC = parentVC {
+            self.dismiss(animated: false) {
+              parentVC.present(next, animated: false, completion:nil)
+            }
+          } else {
+            UIApplication.shared.keyWindow?.rootViewController = next
+          }
+        }
+      }
+    }
+  }
+
+  public func hero_presentOnTop(viewController: UIViewController, frame: CGRect) {
+    var oldViews = view.flattenedViewHierarchy
+    oldViews.removeFirst()
+    let hero = HeroIndependentController()
+    addChildViewController(viewController)
+    viewController.view.frame = frame
+    view.addSubview(viewController.view)
+    viewController.didMove(toParentViewController: self)
+    viewController.view.heroModifiers = [.scale(0.5), .fade]
+    hero.transition(rootView: view, fromViews: oldViews, toViews: viewController.view.flattenedViewHierarchy)
   }
 }
 
@@ -191,12 +342,16 @@ internal extension UIImage {
   }
 }
 
-internal func ==(lhs:CATransform3D, rhs:CATransform3D) -> Bool{
-  var lhs = lhs
-  var rhs = rhs
-  return memcmp(&lhs, &rhs, MemoryLayout<CATransform3D>.size) == 0
-}
-
-internal func !=(lhs:CATransform3D, rhs:CATransform3D) -> Bool{
-  return !(lhs == rhs)
+internal extension UIColor {
+  var components:(r:CGFloat, g: CGFloat, b: CGFloat, a: CGFloat) {
+    var r: CGFloat = 0
+    var g: CGFloat = 0
+    var b: CGFloat = 0
+    var a: CGFloat = 0
+    getRed(&r, green: &g, blue: &b, alpha: &a)
+    return (r, g, b, a)
+  }
+  var alphaComponent: CGFloat {
+    return components.a
+  }
 }

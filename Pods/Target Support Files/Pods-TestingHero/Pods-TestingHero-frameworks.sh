@@ -91,11 +91,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Eureka/Eureka.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Hero/Hero.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Material/Material.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Motion/Motion.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Opera/Opera.framework"
   install_framework "$BUILT_PRODUCTS_DIR/R.swift.Library/Rswift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxAlamofire/RxAlamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxCocoa/RxCocoa.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxSwift/RxSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Shimmer/Shimmer.framework"
   install_framework "$BUILT_PRODUCTS_DIR/XLSwiftKit/XLSwiftKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
@@ -106,10 +108,12 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/Eureka/Eureka.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Hero/Hero.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Material/Material.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Motion/Motion.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Opera/Opera.framework"
   install_framework "$BUILT_PRODUCTS_DIR/R.swift.Library/Rswift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxAlamofire/RxAlamofire.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxCocoa/RxCocoa.framework"
   install_framework "$BUILT_PRODUCTS_DIR/RxSwift/RxSwift.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/Shimmer/Shimmer.framework"
   install_framework "$BUILT_PRODUCTS_DIR/XLSwiftKit/XLSwiftKit.framework"
 fi

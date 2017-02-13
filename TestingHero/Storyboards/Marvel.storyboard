@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Myh-H4-bHN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Myh-H4-bHN">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -28,6 +28,23 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="247"/>
                                 <color key="backgroundColor" red="0.86666666670000003" green="0.86666666670000003" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Swg-Eb-jef">
+                                <rect key="frame" x="10" y="30" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="KF5-12-KIc"/>
+                                    <constraint firstAttribute="width" constant="44" id="z8m-sL-Bak"/>
+                                </constraints>
+                                <state key="normal" image="Back"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="heroModifierString" value="delay(0.2) arc scale(0.01)"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="backButtonDidTouch:" destination="Btl-jc-cmV" eventType="touchUpInside" id="XVq-lW-tIP"/>
+                                </connections>
+                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Mqc-Xr-hHl">
                                 <rect key="frame" x="0.0" y="267" width="375" height="400"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -51,7 +68,9 @@
                             <constraint firstAttribute="trailing" secondItem="Ze3-BR-icz" secondAttribute="trailing" id="Ozc-I9-Dyf"/>
                             <constraint firstItem="Mqc-Xr-hHl" firstAttribute="top" secondItem="fTC-5k-2ZG" secondAttribute="centerY" multiplier="0.8" id="QXU-1c-Iff"/>
                             <constraint firstItem="Ze3-BR-icz" firstAttribute="leading" secondItem="fTC-5k-2ZG" secondAttribute="leading" id="SMk-1u-POI"/>
+                            <constraint firstItem="Swg-Eb-jef" firstAttribute="top" secondItem="rGF-gn-sSm" secondAttribute="bottom" constant="10" id="SqA-u5-ekz"/>
                             <constraint firstItem="Mqc-Xr-hHl" firstAttribute="top" secondItem="Ze3-BR-icz" secondAttribute="bottom" id="b3R-cj-tPu"/>
+                            <constraint firstItem="Swg-Eb-jef" firstAttribute="leading" secondItem="fTC-5k-2ZG" secondAttribute="leading" constant="10" id="tKg-rM-tuz"/>
                             <constraint firstAttribute="trailing" secondItem="Mqc-Xr-hHl" secondAttribute="trailing" id="u72-Pe-UC4"/>
                             <constraint firstItem="chP-n6-T1f" firstAttribute="top" secondItem="Mqc-Xr-hHl" secondAttribute="bottom" id="w2r-F2-E9Q"/>
                         </constraints>

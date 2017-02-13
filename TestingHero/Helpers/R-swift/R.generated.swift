@@ -21,17 +21,8 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.file` struct is generated, and contains static references to 1 files.
+  /// This `R.file` struct is generated, and contains static references to 0 files.
   struct file {
-    /// Resource file `Info.plist`.
-    static let infoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "Info", pathExtension: "plist")
-    
-    /// `bundle.url(forResource: "Info", withExtension: "plist")`
-    static func infoPlist(_: Void = ()) -> Foundation.URL? {
-      let fileResource = R.file.infoPlist
-      return fileResource.bundle.url(forResource: fileResource)
-    }
-    
     fileprivate init() {}
   }
   
@@ -40,12 +31,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 2 images.
+  /// This `R.image` struct is generated, and contains static references to 3 images.
   struct image {
     /// Image `Back`.
     static let back = Rswift.ImageResource(bundle: R.hostingBundle, name: "Back")
     /// Image `marvel-logo`.
     static let marvelLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "marvel-logo")
+    /// Image `xl-logo`.
+    static let xlLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "xl-logo")
     
     /// `UIImage(named: "Back", bundle: ..., traitCollection: ...)`
     static func back(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
@@ -57,17 +50,29 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.marvelLogo, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "xl-logo", bundle: ..., traitCollection: ...)`
+    static func xlLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.xlLogo, compatibleWith: traitCollection)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 3 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 4 nibs.
   struct nib {
+    /// Nib `LoadingCellTableViewCell`.
+    static let loadingCellTableViewCell = _R.nib._LoadingCellTableViewCell()
     /// Nib `MVComicCollectionViewCell`.
     static let mVComicCollectionViewCell = _R.nib._MVComicCollectionViewCell()
     /// Nib `MVEventCollectionViewCell`.
     static let mVEventCollectionViewCell = _R.nib._MVEventCollectionViewCell()
     /// Nib `MVEventDetailTableViewCell`.
     static let mVEventDetailTableViewCell = _R.nib._MVEventDetailTableViewCell()
+    
+    /// `UINib(name: "LoadingCellTableViewCell", in: bundle)`
+    static func loadingCellTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.loadingCellTableViewCell)
+    }
     
     /// `UINib(name: "MVComicCollectionViewCell", in: bundle)`
     static func mVComicCollectionViewCell(_: Void = ()) -> UIKit.UINib {
@@ -87,8 +92,10 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 3 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 4 reuse identifiers.
   struct reuseIdentifier {
+    /// Reuse identifier `LoadingCell`.
+    static let loadingCell: Rswift.ReuseIdentifier<LoadingCellTableViewCell> = Rswift.ReuseIdentifier(identifier: "LoadingCell")
     /// Reuse identifier `MVComicCollectionViewCell`.
     static let mVComicCollectionViewCell: Rswift.ReuseIdentifier<MVComicCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "MVComicCollectionViewCell")
     /// Reuse identifier `MVEventCell`.
@@ -99,7 +106,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 2 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 3 view controllers.
   struct segue {
     /// This struct is generated for `MVEventViewController`, and contains static references to 1 segues.
     struct mVEventViewController {
@@ -131,10 +138,25 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
+    /// This struct is generated for `OnboardingSecondViewController`, and contains static references to 1 segues.
+    struct onboardingSecondViewController {
+      /// Segue identifier `ShowHomeView`.
+      static let showHomeView: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, OnboardingSecondViewController, OnboardingHomeViewController> = Rswift.StoryboardSegueIdentifier(identifier: "ShowHomeView")
+      
+      /// Optionally returns a typed version of segue `ShowHomeView`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showHomeView(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, OnboardingSecondViewController, OnboardingHomeViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.onboardingSecondViewController.showHomeView, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 3 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 4 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
@@ -142,6 +164,8 @@ struct R: Rswift.Validatable {
     static let main = _R.storyboard.main()
     /// Storyboard `Marvel`.
     static let marvel = _R.storyboard.marvel()
+    /// Storyboard `Onboarding`.
+    static let onboarding = _R.storyboard.onboarding()
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void = ()) -> UIKit.UIStoryboard {
@@ -156,6 +180,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Marvel", bundle: ...)`
     static func marvel(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.marvel)
+    }
+    
+    /// `UIStoryboard(name: "Onboarding", bundle: ...)`
+    static func onboarding(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.onboarding)
     }
     
     fileprivate init() {}
@@ -188,6 +217,20 @@ struct _R: Rswift.Validatable {
   struct nib: Rswift.Validatable {
     static func validate() throws {
       try _MVEventDetailTableViewCell.validate()
+    }
+    
+    struct _LoadingCellTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = LoadingCellTableViewCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "LoadingCell"
+      let name = "LoadingCellTableViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> LoadingCellTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? LoadingCellTableViewCell
+      }
+      
+      fileprivate init() {}
     }
     
     struct _MVComicCollectionViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
@@ -242,6 +285,7 @@ struct _R: Rswift.Validatable {
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       try marvel.validate()
+      try onboarding.validate()
     }
     
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
@@ -271,6 +315,26 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "marvel-logo") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'marvel-logo' is used in storyboard 'Marvel', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Back") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Back' is used in storyboard 'Marvel', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct onboarding: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = OnboardingStartViewController
+      
+      let bundle = R.hostingBundle
+      let name = "Onboarding"
+      let onboardingSecondViewController = StoryboardViewControllerResource<OnboardingSecondViewController>(identifier: "OnboardingSecondViewController")
+      
+      func onboardingSecondViewController(_: Void = ()) -> OnboardingSecondViewController? {
+        return UIKit.UIStoryboard(resource: self).instantiateViewController(withResource: onboardingSecondViewController)
+      }
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "Back") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Back' is used in storyboard 'Onboarding', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "xl-logo") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'xl-logo' is used in storyboard 'Onboarding', but couldn't be loaded.") }
+        if _R.storyboard.onboarding().onboardingSecondViewController() == nil { throw Rswift.ValidationError(description:"[R.swift] ViewController with identifier 'onboardingSecondViewController' could not be loaded from storyboard 'Onboarding' as 'OnboardingSecondViewController'.") }
       }
       
       fileprivate init() {}

@@ -12,10 +12,11 @@ import Opera
 
 enum MVDateType: String, Decodable {
 
-    case digitalPurchaseDate = "digitalPurchaseDate"
-    case focDate = "focDate"
-    case onsaleDate = "onsaleDate"
-    case unlimitedDate = "unlimitedDate"
+    case digitalPurchaseDate
+    case focDate
+    case onsaleDate
+    case unlimitedDate
+
 }
 
 // Used to extend Array where Iterator.Element: MVTypedDate
@@ -33,7 +34,6 @@ struct MVTypedDate: MVTypedDateProtocol {
 
 }
 
-
 extension MVTypedDate: Decodable, OperaDecodable {
 
     static func decode(_ json: Any) throws -> MVTypedDate {
@@ -44,7 +44,7 @@ extension MVTypedDate: Decodable, OperaDecodable {
             type: json => "type"
         )
     }
-    
+
 }
 
 extension Sequence where Iterator.Element: MVTypedDateProtocol {

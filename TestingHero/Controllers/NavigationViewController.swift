@@ -16,4 +16,13 @@ class NavigationViewController: UINavigationController {
         isHeroEnabled = true
     }
 
+    override var prefersStatusBarHidden: Bool {
+        return topViewController?.prefersStatusBarHidden ?? false
+    }
+
+    override var statusBarStyle: UIStatusBarStyle {
+        get { return topViewController?.preferredStatusBarStyle ?? .default }
+        set { }
+    }
+
 }

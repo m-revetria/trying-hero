@@ -42,7 +42,6 @@ extension MarvelManager {
 
 }
 
-
 extension MarvelManager {
 
     func comic(resourceUri: String) -> Observable<MVComic> {

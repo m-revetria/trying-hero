@@ -16,7 +16,7 @@ protocol MarvelAPI {
 extension RouteType where Self: MarvelAPI {
 
     var baseURL: URL { return Constants.Networking.marvelBaseUrl }
-    
+
 }
 
 protocol MVPaginatedRouteType: GetRouteType, MarvelAPI, URLRequestSetup {
@@ -102,29 +102,33 @@ extension API.Marvel {
 
     struct Comics {
 
-        struct Get: GetRouteType, MarvelAPI {
+    }
 
-            let resourceUri: String?
-            let id: Int?
+}
 
-            var path: String {
-                if let uri = resourceUri {
-                    return uri.replacingOccurrences(of: Constants.Networking.marvelBaseUrl.absoluteString, with: "")
-                } else {
-                    return "comics/\(id)"
-                }
+extension API.Marvel.Comics {
+
+    struct Get: GetRouteType, MarvelAPI {
+
+        let resourceUri: String?
+        let id: Int?
+
+        var path: String {
+            if let uri = resourceUri {
+                return uri.replacingOccurrences(of: Constants.Networking.marvelBaseUrl.absoluteString, with: "")
+            } else {
+                return "comics/\(id)"
             }
+        }
 
-            init(resourceUri: String) {
-                self.id = nil
-                self.resourceUri = resourceUri
-            }
+        init(resourceUri: String) {
+            self.id = nil
+            self.resourceUri = resourceUri
+        }
 
-            init(id: Int) {
-                self.id = id
-                self.resourceUri = nil
-            }
-
+        init(id: Int) {
+            self.id = id
+            self.resourceUri = nil
         }
 
     }

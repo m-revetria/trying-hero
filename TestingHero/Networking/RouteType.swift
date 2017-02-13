@@ -6,9 +6,9 @@
 //  Copyright © 2017 Xmartlabs. All rights reserved.
 //
 
+import Alamofire
 import Foundation
 import Opera
-import Alamofire
 
 extension RouteType {
 
@@ -49,5 +49,5 @@ extension DeleteRouteType {
     var method: HTTPMethod {
         return .delete
     }
-    
+
 }

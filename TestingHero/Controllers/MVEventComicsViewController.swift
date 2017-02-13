@@ -7,8 +7,8 @@
 //
 
 import Hero
-import UIKit
 import RxSwift
+import UIKit
 
 class MVEventComicsViewController: UIViewController {
 
@@ -29,6 +29,7 @@ class MVEventComicsViewController: UIViewController {
         super.viewWillAppear(animated)
 
         MarvelManager.shared.eventComics(eventId: event.id!)
+            .delay(2.0, scheduler: MainScheduler.instance)
             .subscribe(
                 onNext: { [weak self] comics in
                     self?.comics = comics.results

@@ -68,7 +68,6 @@ class MVEventViewController: UIViewController {
 
 }
 
-
 extension MVEventViewController: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -83,10 +82,10 @@ extension MVEventViewController: UITableViewDataSource {
             cell.title = "Comics"
             Observable.just(comics)
                 .flatMap(Observable.from)
-                .flatMap() { comic in
+                .flatMap { comic in
                     return comic.image(at: 0)
-                        .map() { (comic, $0) }
-                        .catchError() { error in
+                        .map { (comic, $0) }
+                        .catchError { error in
                             debugPrint(error)
                             return Observable.empty()
                         }
@@ -98,7 +97,7 @@ extension MVEventViewController: UITableViewDataSource {
                         images
                             .map { $0.0 }
                             .enumerated()
-                            .forEach() { index, comic in
+                            .forEach { index, comic in
                                 cell.imagesStackView.arrangedSubviews[index].heroID = "comic_\(comic.id!)"
                             }
                     }

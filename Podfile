@@ -12,11 +12,13 @@ def app_pods
     pod 'Eureka', :git => 'https://github.com/xmartlabs/Eureka.git', :branch => 'master'
     pod 'Hero'
     pod 'Material'
+    pod 'Motion'
     pod 'Opera', :git => 'https://github.com/xmartlabs/Opera.git', :branch => 'Swift3'
     pod 'R.swift'
     pod 'RxAlamofire'
     pod 'RxCocoa'
     pod 'RxSwift'
+    pod 'Shimmer'
     pod 'XLSwiftKit'
 end
 

@@ -50,7 +50,7 @@ struct MVComic {
         }
 
         let imageData = images[index]
-        return Observable.create() { subscriber in
+        return Observable.create { subscriber in
             if let image = MVComic.imagesCache[imageData.url] {
                 subscriber.onNext(image)
                 subscriber.onCompleted()

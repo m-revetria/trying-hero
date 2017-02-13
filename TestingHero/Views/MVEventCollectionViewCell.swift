@@ -10,7 +10,7 @@ import Material
 import UIKit
 
 class MVEventCollectionViewCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var card: Card!
 
     private(set) weak var eventCardView: MVEventCardView!

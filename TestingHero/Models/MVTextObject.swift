@@ -33,5 +33,5 @@ extension MVTextObject: Decodable, OperaDecodable {
             text: json => "text"
         )
     }
-    
+
 }
