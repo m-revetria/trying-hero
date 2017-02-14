@@ -54,6 +54,15 @@ class PSDashboardViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+
+        if let viewController = segue.destination as? PSUserActionsViewController, let data = sender as? (isConected: Bool, picture: UIImage) {
+            viewController.userPictureImageView.image = data.picture
+            viewController.userConnectionStatusView.backgroundColor = data.isConecte ? .green : .clear
+        }
+    }
+
 }
 
 extension PSDashboardViewController: UICollectionViewDataSource {
@@ -95,6 +104,15 @@ extension PSDashboardViewController: UICollectionViewDataSource {
 }
 
 extension PSDashboardViewController: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let friendData = friendsData[indexPath.row]
+        performSegue(withIdentifier: R.segue.pSDashboardViewController, sender: friendData)
+
+        let cell: PSFriendCollectionViewCell! = collectionView.cellForItem(at: indexPath) as? PSFriendCollectionViewCell
+        cell.imageView.motionIdentifier = "userPicture"
+        cell.connectionIndicatorView.motionIdentifier = "userConnectionStatus"
+    }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if collectionView == self.gamesCollectionView {

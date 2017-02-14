@@ -50,6 +50,7 @@
 		B2BE607A1E5258C1002C7A83 /* PSDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BE60791E5258C1002C7A83 /* PSDashboardViewController.swift */; };
 		B2BE607D1E525942002C7A83 /* PSFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BE607B1E525942002C7A83 /* PSFriendCollectionViewCell.swift */; };
 		B2BE607E1E525942002C7A83 /* PSFriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2BE607C1E525942002C7A83 /* PSFriendCollectionViewCell.xib */; };
+		B2F6D5E01E52B0780067F72E /* PSUserActionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F6D5DF1E52B0780067F72E /* PSUserActionsViewController.swift */; };
 		B2F95CE51E3A688400E61BFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F95CE41E3A688400E61BFF /* AppDelegate.swift */; };
 		B2F95CEA1E3A688400E61BFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F95CE81E3A688400E61BFF /* Main.storyboard */; };
 		B2F95CEC1E3A688400E61BFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F95CEB1E3A688400E61BFF /* Assets.xcassets */; };
@@ -110,6 +111,7 @@
 		B2BE60791E5258C1002C7A83 /* PSDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PSDashboardViewController.swift; path = Controllers/PSDashboardViewController.swift; sourceTree = "<group>"; };
 		B2BE607B1E525942002C7A83 /* PSFriendCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PSFriendCollectionViewCell.swift; path = Views/PSFriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		B2BE607C1E525942002C7A83 /* PSFriendCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PSFriendCollectionViewCell.xib; path = Views/PSFriendCollectionViewCell.xib; sourceTree = "<group>"; };
+		B2F6D5DF1E52B0780067F72E /* PSUserActionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PSUserActionsViewController.swift; path = Controllers/PSUserActionsViewController.swift; sourceTree = "<group>"; };
 		B2F95CE11E3A688400E61BFF /* TestingHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F95CE41E3A688400E61BFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F95CE91E3A688400E61BFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				B2BE60791E5258C1002C7A83 /* PSDashboardViewController.swift */,
+				B2F6D5DF1E52B0780067F72E /* PSUserActionsViewController.swift */,
 			);
 			name = PlayStation;
 			sourceTree = "<group>";
@@ -573,6 +576,7 @@
 				B21A142F1E3BC6050023CA71 /* MVEventDetailTableViewCell.swift in Sources */,
 				B24A89AF1E3A827400A46C8F /* String.swift in Sources */,
 				B2BE60761E5252AD002C7A83 /* PSGameCollectionViewCell.swift in Sources */,
+				B2F6D5E01E52B0780067F72E /* PSUserActionsViewController.swift in Sources */,
 				B2B0A33E1E520FA100980344 /* LoadingCellTableViewCell.swift in Sources */,
 				B21A143D1E3BFEA90023CA71 /* MVEventComicsViewController.swift in Sources */,
 				B21A14241E3B93390023CA71 /* R.generated.swift in Sources */,
