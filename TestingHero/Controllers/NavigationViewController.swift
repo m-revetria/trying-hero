@@ -7,6 +7,7 @@
 //
 
 import Hero
+import Motion
 import UIKit
 
 class NavigationViewController: UINavigationController {
@@ -14,6 +15,7 @@ class NavigationViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         isHeroEnabled = true
+        isMotionEnabled = false
     }
 
     override var prefersStatusBarHidden: Bool {
