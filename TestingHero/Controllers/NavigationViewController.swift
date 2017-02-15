@@ -14,8 +14,8 @@ class NavigationViewController: UINavigationController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        isHeroEnabled = true
-        isMotionEnabled = false
+        isHeroEnabled = false
+        isMotionEnabled = true
     }
 
     override var prefersStatusBarHidden: Bool {

@@ -238,7 +238,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eOV-ij-ibk">
-                                <rect key="frame" x="-47" y="-164" width="469" height="995"/>
+                                <rect key="frame" x="-46.5" y="-163.5" width="468" height="994"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="468" id="OFF-km-w9K"/>
                                     <constraint firstAttribute="height" constant="994" id="mKL-yD-EDr"/>

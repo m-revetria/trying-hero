@@ -244,12 +244,12 @@ struct R: Rswift.Validatable {
     /// This struct is generated for `PSDashboardViewController`, and contains static references to 1 segues.
     struct pSDashboardViewController {
       /// Segue identifier `ShowGameDetail`.
-      static let showGameDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, PSDashboardViewController, UIKit.UIViewController> = Rswift.StoryboardSegueIdentifier(identifier: "ShowGameDetail")
+      static let showGameDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, PSDashboardViewController, PSGameDetailViewController> = Rswift.StoryboardSegueIdentifier(identifier: "ShowGameDetail")
       
       /// Optionally returns a typed version of segue `ShowGameDetail`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showGameDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, PSDashboardViewController, UIKit.UIViewController>? {
+      static func showGameDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, PSDashboardViewController, PSGameDetailViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.pSDashboardViewController.showGameDetail, segue: segue)
       }
       
@@ -500,6 +500,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "user") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'user' is used in storyboard 'PlayStation', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ps-icon") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ps-icon' is used in storyboard 'PlayStation', but couldn't be loaded.") }
         if UIKit.UIImage(named: "fifa17") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'fifa17' is used in storyboard 'PlayStation', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "Back") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Back' is used in storyboard 'PlayStation', but couldn't be loaded.") }
         if UIKit.UIImage(named: "ps-background") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'ps-background' is used in storyboard 'PlayStation', but couldn't be loaded.") }
       }
       

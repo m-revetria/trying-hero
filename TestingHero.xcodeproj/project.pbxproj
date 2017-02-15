@@ -24,6 +24,7 @@
 		B21A143D1E3BFEA90023CA71 /* MVEventComicsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A143C1E3BFEA90023CA71 /* MVEventComicsViewController.swift */; };
 		B21A143F1E3C02940023CA71 /* MVTypedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A143E1E3C02940023CA71 /* MVTypedDate.swift */; };
 		B21A14411E3C0B680023CA71 /* MVTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A14401E3C0B680023CA71 /* MVTextObject.swift */; };
+		B2385C5B1E5512B5009DC645 /* PSGameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2385C5A1E5512B5009DC645 /* PSGameDetailViewController.swift */; };
 		B24A899F1E3A7C4700A46C8F /* MVEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A899E1E3A7C4700A46C8F /* MVEvent.swift */; };
 		B24A89A11E3A7DC700A46C8F /* MVImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A89A01E3A7DC700A46C8F /* MVImage.swift */; };
 		B24A89A41E3A7EAE00A46C8F /* MVTypedUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A89A31E3A7EAE00A46C8F /* MVTypedUrl.swift */; };
@@ -82,6 +83,7 @@
 		B21A143C1E3BFEA90023CA71 /* MVEventComicsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVEventComicsViewController.swift; path = Controllers/MVEventComicsViewController.swift; sourceTree = "<group>"; };
 		B21A143E1E3C02940023CA71 /* MVTypedDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVTypedDate.swift; path = Models/MVTypedDate.swift; sourceTree = "<group>"; };
 		B21A14401E3C0B680023CA71 /* MVTextObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVTextObject.swift; path = Models/MVTextObject.swift; sourceTree = "<group>"; };
+		B2385C5A1E5512B5009DC645 /* PSGameDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PSGameDetailViewController.swift; path = Controllers/PSGameDetailViewController.swift; sourceTree = "<group>"; };
 		B24A899E1E3A7C4700A46C8F /* MVEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVEvent.swift; path = Models/MVEvent.swift; sourceTree = "<group>"; };
 		B24A89A01E3A7DC700A46C8F /* MVImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVImage.swift; path = Models/MVImage.swift; sourceTree = "<group>"; };
 		B24A89A31E3A7EAE00A46C8F /* MVTypedUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVTypedUrl.swift; path = Models/MVTypedUrl.swift; sourceTree = "<group>"; };
@@ -334,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				B2BE60791E5258C1002C7A83 /* PSDashboardViewController.swift */,
+				B2385C5A1E5512B5009DC645 /* PSGameDetailViewController.swift */,
 			);
 			name = PlayStation;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				B21A14191E3B8EA70023CA71 /* MVEventsViewController.swift in Sources */,
 				B21A142A1E3BA64B0023CA71 /* MVEventViewController.swift in Sources */,
 				B21A142D1E3BB3280023CA71 /* NavigationViewController.swift in Sources */,
+				B2385C5B1E5512B5009DC645 /* PSGameDetailViewController.swift in Sources */,
 				B24A89AA1E3A80D300A46C8F /* MVCollection.swift in Sources */,
 				B2FEF4AA1E4E37820034CFD3 /* OnboardingSecondViewController.swift in Sources */,
 				B24A89B71E3A8A7500A46C8F /* MVAPI.swift in Sources */,
