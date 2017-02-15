@@ -1,6 +1,0 @@
-framework module Opera {
-  umbrella header "Opera-umbrella.h"
-
-  export *
-  module * { export * }
-}
