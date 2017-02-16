@@ -128,7 +128,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.nib` struct is generated, and contains static references to 6 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 7 nibs.
   struct nib {
     /// Nib `LoadingCellTableViewCell`.
     static let loadingCellTableViewCell = _R.nib._LoadingCellTableViewCell()
@@ -142,6 +142,8 @@ struct R: Rswift.Validatable {
     static let pSFriendCollectionViewCell = _R.nib._PSFriendCollectionViewCell()
     /// Nib `PSGameCollectionViewCell`.
     static let pSGameCollectionViewCell = _R.nib._PSGameCollectionViewCell()
+    /// Nib `PSGameDescriptionTableViewCell`.
+    static let pSGameDescriptionTableViewCell = _R.nib._PSGameDescriptionTableViewCell()
     
     /// `UINib(name: "LoadingCellTableViewCell", in: bundle)`
     static func loadingCellTableViewCell(_: Void = ()) -> UIKit.UINib {
@@ -173,10 +175,15 @@ struct R: Rswift.Validatable {
       return UIKit.UINib(resource: R.nib.pSGameCollectionViewCell)
     }
     
+    /// `UINib(name: "PSGameDescriptionTableViewCell", in: bundle)`
+    static func pSGameDescriptionTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.pSGameDescriptionTableViewCell)
+    }
+    
     fileprivate init() {}
   }
   
-  /// This `R.reuseIdentifier` struct is generated, and contains static references to 6 reuse identifiers.
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 7 reuse identifiers.
   struct reuseIdentifier {
     /// Reuse identifier `LoadingCell`.
     static let loadingCell: Rswift.ReuseIdentifier<LoadingCellTableViewCell> = Rswift.ReuseIdentifier(identifier: "LoadingCell")
@@ -190,6 +197,8 @@ struct R: Rswift.Validatable {
     static let pSFriendCell: Rswift.ReuseIdentifier<PSFriendCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "PSFriendCell")
     /// Reuse identifier `PSGameCell`.
     static let pSGameCell: Rswift.ReuseIdentifier<PSGameCollectionViewCell> = Rswift.ReuseIdentifier(identifier: "PSGameCell")
+    /// Reuse identifier `PSGameDescriptionCell`.
+    static let pSGameDescriptionCell: Rswift.ReuseIdentifier<PSGameDescriptionTableViewCell> = Rswift.ReuseIdentifier(identifier: "PSGameDescriptionCell")
     
     fileprivate init() {}
   }
@@ -326,9 +335,9 @@ struct _R: Rswift.Validatable {
   
   struct nib: Rswift.Validatable {
     static func validate() throws {
-      try _MVEventDetailTableViewCell.validate()
       try _PSGameCollectionViewCell.validate()
       try _PSFriendCollectionViewCell.validate()
+      try _MVEventDetailTableViewCell.validate()
     }
     
     struct _LoadingCellTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
@@ -422,6 +431,20 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if UIKit.UIImage(named: "watch_dog") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'watch_dog' is used in nib 'PSGameCollectionViewCell', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct _PSGameDescriptionTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = PSGameDescriptionTableViewCell
+      
+      let bundle = R.hostingBundle
+      let identifier = "PSGameDescriptionCell"
+      let name = "PSGameDescriptionTableViewCell"
+      
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [NSObject : AnyObject]? = nil) -> PSGameDescriptionTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? PSGameDescriptionTableViewCell
       }
       
       fileprivate init() {}

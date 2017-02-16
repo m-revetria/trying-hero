@@ -405,6 +405,10 @@
                                     <constraint firstAttribute="width" secondItem="T51-3d-ypQ" secondAttribute="height" multiplier="284:374" id="lB0-t2-sHk"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lpk-Zn-Ef4">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36470588235294116" green="0.41176470588235292" blue="0.67450980392156867" alpha="0.75" colorSpace="calibratedRGB"/>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m75-fd-j3E">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -480,6 +484,32 @@
                                         <constraint firstItem="dhn-cY-Xvc" firstAttribute="leading" secondItem="AFm-DK-6Y5" secondAttribute="trailing" constant="20" id="zlK-nQ-WNT"/>
                                     </constraints>
                                 </view>
+                                <view key="tableFooterView" alpha="0.0" contentMode="scaleToFill" id="I3T-Vu-n1A">
+                                    <rect key="frame" x="0.0" y="198" width="375" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="say-N8-pBb">
+                                            <rect key="frame" x="20" y="-10" width="335" height="30"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="6"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="say-N8-pBb" firstAttribute="leading" secondItem="I3T-Vu-n1A" secondAttribute="leading" constant="20" id="1fW-KD-Zgv"/>
+                                        <constraint firstAttribute="bottom" secondItem="say-N8-pBb" secondAttribute="bottom" id="6mc-vX-3Ju"/>
+                                        <constraint firstAttribute="trailing" secondItem="say-N8-pBb" secondAttribute="trailing" constant="20" id="F5t-0z-Wbu"/>
+                                        <constraint firstItem="say-N8-pBb" firstAttribute="top" secondItem="I3T-Vu-n1A" secondAttribute="top" constant="-10" id="WdP-Xj-vvK"/>
+                                    </constraints>
+                                </view>
+                                <connections>
+                                    <outlet property="dataSource" destination="qO9-WI-pQ3" id="yha-DM-OrE"/>
+                                    <outlet property="delegate" destination="qO9-WI-pQ3" id="svR-5l-v5Y"/>
+                                </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ky3-Vs-Kxr">
                                 <rect key="frame" x="20" y="12" width="9" height="22"/>
@@ -492,6 +522,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="T51-3d-ypQ" firstAttribute="top" secondItem="pxH-Df-dyq" secondAttribute="topMargin" id="2E8-ll-eyI"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="lpk-Zn-Ef4" secondAttribute="bottom" id="708-ph-1ew"/>
+                            <constraint firstAttribute="trailing" secondItem="lpk-Zn-Ef4" secondAttribute="trailing" id="9Hx-EA-rTn"/>
+                            <constraint firstItem="lpk-Zn-Ef4" firstAttribute="leading" secondItem="pxH-Df-dyq" secondAttribute="leading" id="BSi-1M-DgY"/>
+                            <constraint firstItem="lpk-Zn-Ef4" firstAttribute="top" secondItem="pxH-Df-dyq" secondAttribute="topMargin" id="CdL-cn-qi5"/>
                             <constraint firstItem="T51-3d-ypQ" firstAttribute="leading" secondItem="pxH-Df-dyq" secondAttribute="leading" id="R2Y-Fi-MlM"/>
                             <constraint firstAttribute="trailing" secondItem="m75-fd-j3E" secondAttribute="trailing" id="XBl-By-6aq"/>
                             <constraint firstItem="2ku-nB-F0o" firstAttribute="top" secondItem="m75-fd-j3E" secondAttribute="bottom" id="XtO-IN-Dvi"/>
@@ -506,7 +540,7 @@
                         <outlet property="backButton" destination="Ky3-Vs-Kxr" id="R1J-gJ-CXw"/>
                         <outlet property="backgroundImage" destination="T51-3d-ypQ" id="M8x-ZW-e9N"/>
                         <outlet property="coverImageView" destination="AFm-DK-6Y5" id="Ijg-6r-dwW"/>
-                        <outlet property="tableView" destination="m75-fd-j3E" id="iRI-MF-cgw"/>
+                        <outlet property="tableView" destination="m75-fd-j3E" id="ijG-X2-Yvv"/>
                         <outlet property="titleLabel" destination="dhn-cY-Xvc" id="GTz-hK-Hvz"/>
                     </connections>
                 </viewController>

@@ -43,6 +43,8 @@
 		B24A89C21E3A957000A46C8F /* MarvelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A89C11E3A957000A46C8F /* MarvelManager.swift */; };
 		B24A89C41E3A95CB00A46C8F /* MVPaginatedResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A89C31E3A95CB00A46C8F /* MVPaginatedResponse.swift */; };
 		B24A89C61E3A969500A46C8F /* MVResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A89C51E3A969500A46C8F /* MVResponse.swift */; };
+		B298FD6A1E55BB6900912C27 /* PSGameDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B298FD681E55BB6900912C27 /* PSGameDescriptionTableViewCell.swift */; };
+		B298FD6B1E55BB6900912C27 /* PSGameDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B298FD691E55BB6900912C27 /* PSGameDescriptionTableViewCell.xib */; };
 		B2B0A33E1E520FA100980344 /* LoadingCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B0A33C1E520FA100980344 /* LoadingCellTableViewCell.swift */; };
 		B2B0A33F1E520FA100980344 /* LoadingCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2B0A33D1E520FA100980344 /* LoadingCellTableViewCell.xib */; };
 		B2B0A3411E522A1D00980344 /* PlayStation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2B0A3401E522A1D00980344 /* PlayStation.storyboard */; };
@@ -104,6 +106,8 @@
 		B24A89C51E3A969500A46C8F /* MVResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVResponse.swift; path = Models/MVResponse.swift; sourceTree = "<group>"; };
 		B24A89CB1E3A9D9300A46C8F /* TestingHero-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "TestingHero-Bridging-Header.h"; path = "SupportingFiles/TestingHero-Bridging-Header.h"; sourceTree = "<group>"; };
 		B24A89CC1E3A9D9300A46C8F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = SupportingFiles/Info.plist; sourceTree = "<group>"; };
+		B298FD681E55BB6900912C27 /* PSGameDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PSGameDescriptionTableViewCell.swift; path = Views/PSGameDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		B298FD691E55BB6900912C27 /* PSGameDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PSGameDescriptionTableViewCell.xib; path = Views/PSGameDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		B2B0A33C1E520FA100980344 /* LoadingCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoadingCellTableViewCell.swift; path = Views/LoadingCellTableViewCell.swift; sourceTree = "<group>"; };
 		B2B0A33D1E520FA100980344 /* LoadingCellTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoadingCellTableViewCell.xib; path = Views/LoadingCellTableViewCell.xib; sourceTree = "<group>"; };
 		B2B0A3401E522A1D00980344 /* PlayStation.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = PlayStation.storyboard; path = Storyboards/PlayStation.storyboard; sourceTree = "<group>"; };
@@ -328,6 +332,8 @@
 				B2BE60751E5252AD002C7A83 /* PSGameCollectionViewCell.xib */,
 				B2BE607B1E525942002C7A83 /* PSFriendCollectionViewCell.swift */,
 				B2BE607C1E525942002C7A83 /* PSFriendCollectionViewCell.xib */,
+				B298FD681E55BB6900912C27 /* PSGameDescriptionTableViewCell.swift */,
+				B298FD691E55BB6900912C27 /* PSGameDescriptionTableViewCell.xib */,
 			);
 			name = PlayStation;
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 				B21A14171E3B8DD10023CA71 /* Marvel.storyboard in Resources */,
 				B2BE60771E5252AD002C7A83 /* PSGameCollectionViewCell.xib in Resources */,
 				B21A14281E3B956F0023CA71 /* MVEventCollectionViewCell.xib in Resources */,
+				B298FD6B1E55BB6900912C27 /* PSGameDescriptionTableViewCell.xib in Resources */,
 				B21A143B1E3BF9030023CA71 /* MVComicCollectionViewCell.xib in Resources */,
 				B2B0A3411E522A1D00980344 /* PlayStation.storyboard in Resources */,
 				B2F95CEF1E3A688400E61BFF /* LaunchScreen.storyboard in Resources */,
@@ -589,6 +596,7 @@
 				B24A89B11E3A884E00A46C8F /* MVStory.swift in Sources */,
 				B24A899F1E3A7C4700A46C8F /* MVEvent.swift in Sources */,
 				B21A14331E3BE1630023CA71 /* RxSwift.swift in Sources */,
+				B298FD6A1E55BB6900912C27 /* PSGameDescriptionTableViewCell.swift in Sources */,
 				B2F95CE51E3A688400E61BFF /* AppDelegate.swift in Sources */,
 				B24A89AD1E3A819900A46C8F /* URL.swift in Sources */,
 			);
