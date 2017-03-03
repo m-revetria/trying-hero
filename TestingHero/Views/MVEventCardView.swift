@@ -29,9 +29,9 @@ class MVEventCardView: OwnerView {
         imageCard = ImageCard(frame: bounds)
 
         imageCard.imageView = UIImageView(frame: imageCard.bounds)
+        imageCard.imageView?.frame = imageCard.frame
         imageCard.imageView?.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         imageCard.imageView?.backgroundColor = UIColor.darkGray
-        imageCard.imageView?.translatesAutoresizingMaskIntoConstraints = true
 
         /*
         imageCard.toolbar = Toolbar()

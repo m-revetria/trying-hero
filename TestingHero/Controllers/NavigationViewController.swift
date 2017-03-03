@@ -7,7 +7,6 @@
 //
 
 import Hero
-import Motion
 import UIKit
 
 class NavigationViewController: UINavigationController {

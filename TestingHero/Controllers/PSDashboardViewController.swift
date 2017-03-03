@@ -7,7 +7,7 @@
 //
 
 import Hero
-import Motion
+import Material
 import UIKit
 
 typealias UserData = (isConnected: Bool, picture: UIImage, name: String)
@@ -31,7 +31,7 @@ class PSDashboardViewController: UIViewController {
 
     var hideFriendActions: ((Void) -> Void)?
 
-    fileprivate static let showActionAnimationDuration = 0.5
+    fileprivate static let showActionAnimationDuration = 0.3
 
     fileprivate lazy var gamesData: [GameData] = {
         //swiftlint:disable line_length
@@ -53,11 +53,15 @@ class PSDashboardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.isHeroEnabled = false
+
         isHeroEnabled = false
         isMotionEnabled = true
 
         gamesCollectionView.register(R.nib.pSGameCollectionViewCell)
         friendsCollectionView.register(R.nib.pSFriendCollectionViewCell)
+
+        view.motionIdentifier = "rootView"
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -83,6 +87,10 @@ class PSDashboardViewController: UIViewController {
         hideFriendActions?()
     }
 
+    @IBAction func backButtonDidTouch(_ sender: Any) {
+        _ = navigationController?.popViewController(animated: true)
+    }
+
 }
 
 extension PSDashboardViewController: UICollectionViewDataSource {
@@ -102,7 +110,6 @@ extension PSDashboardViewController: UICollectionViewDataSource {
             let data = gamesData[indexPath.item]
             gameCell.imageView.image = data.cover
             gameCell.imageView.motionIdentifier = ""
-            gameCell.titleLabel.text = data.title
             gameCell.titleLabel.motionIdentifier = ""
 
             return gameCell
@@ -178,7 +185,6 @@ extension PSDashboardViewController: UICollectionViewDelegate, UICollectionViewD
         } else {
             let cell: PSGameCollectionViewCell! = collectionView.cellForItem(at: indexPath) as? PSGameCollectionViewCell
             cell.imageView.motionIdentifier = "gameCover"
-            cell.titleLabel.motionIdentifier = "gameTitle"
             let gameData = gamesData[indexPath.item]
             performSegue(withIdentifier: R.segue.pSDashboardViewController.showGameDetail, sender: gameData)
         }

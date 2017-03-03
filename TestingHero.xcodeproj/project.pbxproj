@@ -25,6 +25,9 @@
 		B21A143F1E3C02940023CA71 /* MVTypedDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A143E1E3C02940023CA71 /* MVTypedDate.swift */; };
 		B21A14411E3C0B680023CA71 /* MVTextObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A14401E3C0B680023CA71 /* MVTextObject.swift */; };
 		B2385C5B1E5512B5009DC645 /* PSGameDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2385C5A1E5512B5009DC645 /* PSGameDetailViewController.swift */; };
+		B2387AEE1E5B6465000CC578 /* MotionOnboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2387AED1E5B6465000CC578 /* MotionOnboarding.storyboard */; };
+		B2387AF11E5B650D000CC578 /* MTOnboardingStartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2387AF01E5B650D000CC578 /* MTOnboardingStartViewController.swift */; };
+		B2387AF31E5B65B1000CC578 /* MTOnboardingHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2387AF21E5B65B1000CC578 /* MTOnboardingHomeViewController.swift */; };
 		B24A899F1E3A7C4700A46C8F /* MVEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A899E1E3A7C4700A46C8F /* MVEvent.swift */; };
 		B24A89A11E3A7DC700A46C8F /* MVImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A89A01E3A7DC700A46C8F /* MVImage.swift */; };
 		B24A89A41E3A7EAE00A46C8F /* MVTypedUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24A89A31E3A7EAE00A46C8F /* MVTypedUrl.swift */; };
@@ -53,6 +56,7 @@
 		B2BE607A1E5258C1002C7A83 /* PSDashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BE60791E5258C1002C7A83 /* PSDashboardViewController.swift */; };
 		B2BE607D1E525942002C7A83 /* PSFriendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BE607B1E525942002C7A83 /* PSFriendCollectionViewCell.swift */; };
 		B2BE607E1E525942002C7A83 /* PSFriendCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2BE607C1E525942002C7A83 /* PSFriendCollectionViewCell.xib */; };
+		B2C6212F1E579C5D0071CA90 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B2C6212E1E579C5D0071CA90 /* GoogleService-Info.plist */; };
 		B2F95CE51E3A688400E61BFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F95CE41E3A688400E61BFF /* AppDelegate.swift */; };
 		B2F95CEA1E3A688400E61BFF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F95CE81E3A688400E61BFF /* Main.storyboard */; };
 		B2F95CEC1E3A688400E61BFF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F95CEB1E3A688400E61BFF /* Assets.xcassets */; };
@@ -86,6 +90,9 @@
 		B21A143E1E3C02940023CA71 /* MVTypedDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVTypedDate.swift; path = Models/MVTypedDate.swift; sourceTree = "<group>"; };
 		B21A14401E3C0B680023CA71 /* MVTextObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVTextObject.swift; path = Models/MVTextObject.swift; sourceTree = "<group>"; };
 		B2385C5A1E5512B5009DC645 /* PSGameDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PSGameDetailViewController.swift; path = Controllers/PSGameDetailViewController.swift; sourceTree = "<group>"; };
+		B2387AED1E5B6465000CC578 /* MotionOnboarding.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MotionOnboarding.storyboard; path = Storyboards/MotionOnboarding.storyboard; sourceTree = "<group>"; };
+		B2387AF01E5B650D000CC578 /* MTOnboardingStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTOnboardingStartViewController.swift; path = Controllers/MTOnboardingStartViewController.swift; sourceTree = "<group>"; };
+		B2387AF21E5B65B1000CC578 /* MTOnboardingHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MTOnboardingHomeViewController.swift; path = Controllers/MTOnboardingHomeViewController.swift; sourceTree = "<group>"; };
 		B24A899E1E3A7C4700A46C8F /* MVEvent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVEvent.swift; path = Models/MVEvent.swift; sourceTree = "<group>"; };
 		B24A89A01E3A7DC700A46C8F /* MVImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVImage.swift; path = Models/MVImage.swift; sourceTree = "<group>"; };
 		B24A89A31E3A7EAE00A46C8F /* MVTypedUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MVTypedUrl.swift; path = Models/MVTypedUrl.swift; sourceTree = "<group>"; };
@@ -116,6 +123,7 @@
 		B2BE60791E5258C1002C7A83 /* PSDashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PSDashboardViewController.swift; path = Controllers/PSDashboardViewController.swift; sourceTree = "<group>"; };
 		B2BE607B1E525942002C7A83 /* PSFriendCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PSFriendCollectionViewCell.swift; path = Views/PSFriendCollectionViewCell.swift; sourceTree = "<group>"; };
 		B2BE607C1E525942002C7A83 /* PSFriendCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = PSFriendCollectionViewCell.xib; path = Views/PSFriendCollectionViewCell.xib; sourceTree = "<group>"; };
+		B2C6212E1E579C5D0071CA90 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "SupportingFiles/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B2F95CE11E3A688400E61BFF /* TestingHero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestingHero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F95CE41E3A688400E61BFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F95CE91E3A688400E61BFF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -201,11 +209,21 @@
 			name = Base;
 			sourceTree = "<group>";
 		};
+		B2387AEF1E5B64DE000CC578 /* MotionOnboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B2387AF01E5B650D000CC578 /* MTOnboardingStartViewController.swift */,
+				B2387AF21E5B65B1000CC578 /* MTOnboardingHomeViewController.swift */,
+			);
+			name = MotionOnboarding;
+			sourceTree = "<group>";
+		};
 		B24A89971E3A7A1E00A46C8F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				B21A142B1E3BB3080023CA71 /* Base */,
 				B21A141A1E3B8EA90023CA71 /* Marvel */,
+				B2387AEF1E5B64DE000CC578 /* MotionOnboarding */,
 				B2FEF4A61E4E30BA0034CFD3 /* Onboarding */,
 				B2BE60781E5258A2002C7A83 /* PlayStation */,
 			);
@@ -247,8 +265,9 @@
 				B2F95CED1E3A688400E61BFF /* LaunchScreen.storyboard */,
 				B2F95CE81E3A688400E61BFF /* Main.storyboard */,
 				B21A14161E3B8DD10023CA71 /* Marvel.storyboard */,
-				B2B0A3401E522A1D00980344 /* PlayStation.storyboard */,
+				B2387AED1E5B6465000CC578 /* MotionOnboarding.storyboard */,
 				B2FEF4A41E4E2CB60034CFD3 /* Onboarding.storyboard */,
+				B2B0A3401E522A1D00980344 /* PlayStation.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -256,6 +275,7 @@
 		B24A899C1E3A7A5200A46C8F /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				B2C6212E1E579C5D0071CA90 /* GoogleService-Info.plist */,
 				B24A89CB1E3A9D9300A46C8F /* TestingHero-Bridging-Header.h */,
 				B24A89CC1E3A9D9300A46C8F /* Info.plist */,
 			);
@@ -471,6 +491,8 @@
 				B2F95CEA1E3A688400E61BFF /* Main.storyboard in Resources */,
 				B21A14311E3BC89D0023CA71 /* MVEventDetailTableViewCell.xib in Resources */,
 				B2FEF4A51E4E2CB60034CFD3 /* Onboarding.storyboard in Resources */,
+				B2C6212F1E579C5D0071CA90 /* GoogleService-Info.plist in Resources */,
+				B2387AEE1E5B6465000CC578 /* MotionOnboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,7 +526,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		B22D1E741E3F83EB0056732B /* SwiftLint */ = {
@@ -584,6 +606,7 @@
 				B21A142F1E3BC6050023CA71 /* MVEventDetailTableViewCell.swift in Sources */,
 				B24A89AF1E3A827400A46C8F /* String.swift in Sources */,
 				B2BE60761E5252AD002C7A83 /* PSGameCollectionViewCell.swift in Sources */,
+				B2387AF31E5B65B1000CC578 /* MTOnboardingHomeViewController.swift in Sources */,
 				B2B0A33E1E520FA100980344 /* LoadingCellTableViewCell.swift in Sources */,
 				B21A143D1E3BFEA90023CA71 /* MVEventComicsViewController.swift in Sources */,
 				B21A14241E3B93390023CA71 /* R.generated.swift in Sources */,
@@ -595,6 +618,7 @@
 				B24A89A11E3A7DC700A46C8F /* MVImage.swift in Sources */,
 				B24A89B11E3A884E00A46C8F /* MVStory.swift in Sources */,
 				B24A899F1E3A7C4700A46C8F /* MVEvent.swift in Sources */,
+				B2387AF11E5B650D000CC578 /* MTOnboardingStartViewController.swift in Sources */,
 				B21A14331E3BE1630023CA71 /* RxSwift.swift in Sources */,
 				B298FD6A1E55BB6900912C27 /* PSGameDescriptionTableViewCell.swift in Sources */,
 				B2F95CE51E3A688400E61BFF /* AppDelegate.swift in Sources */,

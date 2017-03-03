@@ -33,6 +33,7 @@ class MVEventDetailTableViewCell: UITableViewCell {
 
         setupImages(images: images)
         titleLabel.text = title
+        titleLabel.heroModifiers = [.zPosition(99)]
     }
 
     override func prepareForReuse() {

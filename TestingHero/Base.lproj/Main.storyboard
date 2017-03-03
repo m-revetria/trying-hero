@@ -80,6 +80,26 @@
                                             <segue destination="lKm-mH-8Pf" kind="show" id="vb3-Ll-jbQ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="FOA-eE-rKZ" style="IBUITableViewCellStyleDefault" id="s2g-UB-8ZY">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="s2g-UB-8ZY" id="YWJ-jT-1EF">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Onboarding with motion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FOA-eE-rKZ">
+                                                    <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="lFc-eQ-Rku" kind="show" id="oeJ-7t-bib"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -117,6 +137,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zrl-Go-uoy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="813" y="285"/>
+        </scene>
+        <!--MotionOnboarding-->
+        <scene sceneID="GqE-6F-dz8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="MotionOnboarding" id="lFc-eQ-Rku" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ycn-Ng-8S4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="846" y="381"/>
         </scene>
         <!--Navigation View Controller-->
         <scene sceneID="knX-A3-8dj">

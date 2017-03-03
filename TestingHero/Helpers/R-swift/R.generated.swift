@@ -21,8 +21,17 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.file` struct is generated, and contains static references to 0 files.
+  /// This `R.file` struct is generated, and contains static references to 1 files.
   struct file {
+    /// Resource file `GoogleService-Info.plist`.
+    static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
+    
+    /// `bundle.url(forResource: "GoogleService-Info", withExtension: "plist")`
+    static func googleServiceInfoPlist(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.googleServiceInfoPlist
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+    
     fileprivate init() {}
   }
   
@@ -203,18 +212,33 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 4 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 5 view controllers.
   struct segue {
+    /// This struct is generated for `MTOnboardingStartViewController`, and contains static references to 1 segues.
+    struct mTOnboardingStartViewController {
+      /// Segue identifier `ShowHomeDashboard`.
+      static let showHomeDashboard: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MTOnboardingStartViewController, MTOnboardingHomeViewController> = Rswift.StoryboardSegueIdentifier(identifier: "ShowHomeDashboard")
+      
+      /// Optionally returns a typed version of segue `ShowHomeDashboard`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showHomeDashboard(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MTOnboardingStartViewController, MTOnboardingHomeViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mTOnboardingStartViewController.showHomeDashboard, segue: segue)
+      }
+      
+      fileprivate init() {}
+    }
+    
     /// This struct is generated for `MVEventViewController`, and contains static references to 1 segues.
-    struct mVEventViewController {
+    struct testingHeroMVEventViewController {
       /// Segue identifier `ShowEventComics`.
-      static let showEventComics: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MVEventViewController, MVEventComicsViewController> = Rswift.StoryboardSegueIdentifier(identifier: "ShowEventComics")
+      static let showEventComics: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, TestingHero.MVEventViewController, MVEventComicsViewController> = Rswift.StoryboardSegueIdentifier(identifier: "ShowEventComics")
       
       /// Optionally returns a typed version of segue `ShowEventComics`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showEventComics(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MVEventViewController, MVEventComicsViewController>? {
-        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mVEventViewController.showEventComics, segue: segue)
+      static func showEventComics(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, TestingHero.MVEventViewController, MVEventComicsViewController>? {
+        return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.testingHeroMVEventViewController.showEventComics, segue: segue)
       }
       
       fileprivate init() {}
@@ -223,12 +247,12 @@ struct R: Rswift.Validatable {
     /// This struct is generated for `MVEventsViewController`, and contains static references to 1 segues.
     struct mVEventsViewController {
       /// Segue identifier `ShowEventDetail`.
-      static let showEventDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MVEventsViewController, MVEventViewController> = Rswift.StoryboardSegueIdentifier(identifier: "ShowEventDetail")
+      static let showEventDetail: Rswift.StoryboardSegueIdentifier<UIKit.UIStoryboardSegue, MVEventsViewController, TestingHero.MVEventViewController> = Rswift.StoryboardSegueIdentifier(identifier: "ShowEventDetail")
       
       /// Optionally returns a typed version of segue `ShowEventDetail`.
       /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
       /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
-      static func showEventDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MVEventsViewController, MVEventViewController>? {
+      static func showEventDetail(segue: UIKit.UIStoryboardSegue) -> Rswift.TypedStoryboardSegueInfo<UIKit.UIStoryboardSegue, MVEventsViewController, TestingHero.MVEventViewController>? {
         return Rswift.TypedStoryboardSegueInfo(segueIdentifier: R.segue.mVEventsViewController.showEventDetail, segue: segue)
       }
       
@@ -268,7 +292,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 6 storyboards.
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
@@ -276,6 +300,8 @@ struct R: Rswift.Validatable {
     static let main = _R.storyboard.main()
     /// Storyboard `Marvel`.
     static let marvel = _R.storyboard.marvel()
+    /// Storyboard `MotionOnboarding`.
+    static let motionOnboarding = _R.storyboard.motionOnboarding()
     /// Storyboard `Onboarding`.
     static let onboarding = _R.storyboard.onboarding()
     /// Storyboard `PlayStation`.
@@ -294,6 +320,11 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Marvel", bundle: ...)`
     static func marvel(_: Void = ()) -> UIKit.UIStoryboard {
       return UIKit.UIStoryboard(resource: R.storyboard.marvel)
+    }
+    
+    /// `UIStoryboard(name: "MotionOnboarding", bundle: ...)`
+    static func motionOnboarding(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.motionOnboarding)
     }
     
     /// `UIStoryboard(name: "Onboarding", bundle: ...)`
@@ -458,6 +489,7 @@ struct _R: Rswift.Validatable {
       try marvel.validate()
       try playStation.validate()
       try onboarding.validate()
+      try motionOnboarding.validate()
     }
     
     struct launchScreen: Rswift.StoryboardResourceWithInitialControllerType {
@@ -487,6 +519,20 @@ struct _R: Rswift.Validatable {
       static func validate() throws {
         if UIKit.UIImage(named: "marvel-logo") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'marvel-logo' is used in storyboard 'Marvel', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Back") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Back' is used in storyboard 'Marvel', but couldn't be loaded.") }
+      }
+      
+      fileprivate init() {}
+    }
+    
+    struct motionOnboarding: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = MTOnboardingStartViewController
+      
+      let bundle = R.hostingBundle
+      let name = "MotionOnboarding"
+      
+      static func validate() throws {
+        if UIKit.UIImage(named: "Back") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Back' is used in storyboard 'MotionOnboarding', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "xl-logo") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'xl-logo' is used in storyboard 'MotionOnboarding', but couldn't be loaded.") }
       }
       
       fileprivate init() {}

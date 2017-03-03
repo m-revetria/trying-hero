@@ -21,6 +21,8 @@ class MVEventsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        navigationController?.isHeroEnabled = true
+
         collectionView.register(R.nib.mVEventCollectionViewCell)
         view.backgroundColor = UIColor(netHex: 0x800c00)
     }
@@ -51,6 +53,10 @@ class MVEventsViewController: UIViewController {
             target.event = data?.event
             target.coverImage = data?.image
         }
+    }
+
+    @IBAction func backButtonDidTouch(_ sender: Any) {
+        _ = navigationController?.popViewController(animated: true)
     }
 
 }

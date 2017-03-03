@@ -20,6 +20,7 @@ class OnboardingStartViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
+        navigationController?.isHeroEnabled = true
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
 

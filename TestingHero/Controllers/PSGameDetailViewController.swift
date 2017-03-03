@@ -6,7 +6,7 @@
 //  Copyright © 2017 Xmartlabs. All rights reserved.
 //
 
-import Motion
+import Material
 import UIKit
 
 class PSGameDetailViewController: UIViewController {
@@ -17,6 +17,7 @@ class PSGameDetailViewController: UIViewController {
     @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var tableView: UITableView!
 
+    @IBOutlet weak var animatableCoverImageView: UIImageView!
     @IBOutlet weak var coverImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
 
@@ -27,15 +28,18 @@ class PSGameDetailViewController: UIViewController {
         backButton.tintColor = .white
 
         isMotionEnabled = true
+        animatableCoverImageView.motionIdentifier = "gameCover"
+        backgroundImage.motion(.duration(0.0), .translateX(-view.frame.width))
+        tableView.motion(.duration(0.0), .translateY(view.frame.height))
 
-        coverImageView.motionIdentifier = "gameCover"
-        titleLabel.motionIdentifier = "gameTitle"
+        coverImageView.alpha = 0.0
 
         tableView.register(R.nib.pSGameDescriptionTableViewCell)
         tableView.contentInset = UIEdgeInsets(top: 150, left: 0, bottom: 0, right: 0)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
 
+        animatableCoverImageView.image = game.cover
         backgroundImage.image = game.cover
         coverImageView.image = game.cover
         titleLabel.text = game.title
@@ -44,17 +48,33 @@ class PSGameDetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
 
-//        backgroundImage.alpha = 0
-//        backgroundImage.frame.origin.x = -view.width
-//        backgroundImage.motionAnimations = [MotionAnimation.duration(0.5), MotionAnimation.fade(1), MotionAnimation.x(0)]
+        let duration = 0.3
+        let delay = 0.30
+        let timing = MotionAnimation.timingFunction(.easeInEaseOut)
 
-//        tableView.transform = CGAffineTransform(translationX: 0, y: view.frame.height)
-//        tableView.motionAnimations = [.duration(0.5), .translateY(0)]
+        backgroundImage.motion(.delay(delay), .duration(duration), .translateX(0), timing)
+        tableView.motion(.delay(delay), .duration(duration), .translateY(0), timing)
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.1) { [unowned self] in
+            self.animatableCoverImageView.alpha = 0.0
+            self.coverImageView.alpha = 1.0
+        }
     }
 
     @IBAction func backButtonDidTouch(_ sender: Any) {
-        _ = navigationController?.popViewController(animated: true)
-//        presentingViewController?.dismiss(animated: true, completion: nil)
+        animatableCoverImageView.alpha = 1
+        coverImageView.alpha = 0
+
+        let duration = 0.25
+        let delay = 0.25
+        let timing = MotionAnimation.timingFunction(.easeInEaseOut)
+
+        backgroundImage.motion([.duration(duration), .translateX(-view.frame.width), timing])
+        tableView.motion([.duration(duration), .translateY(view.frame.height), timing])
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + duration) { [unowned self] in
+            _ = self.navigationController?.popViewController(animated: true)
+        }
     }
 
 }
@@ -74,6 +94,12 @@ extension PSGameDetailViewController: UITableViewDataSource {
 }
 
 extension PSGameDetailViewController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        tableView.convert(cell!.frame, to: view)
+        debugPrint()
+    }
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 20

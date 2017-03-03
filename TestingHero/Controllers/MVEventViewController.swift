@@ -80,6 +80,7 @@ extension MVEventViewController: UITableViewDataSource {
         switch indexPath.row {
         case 0:
             cell.title = "Comics"
+            cell.titleLabel.heroID = "comicsTitle"
             Observable.just(comics)
                 .flatMap(Observable.from)
                 .flatMap { comic in
@@ -124,7 +125,7 @@ extension MVEventViewController: UITableViewDataSource {
 extension MVEventViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-       performSegue(withIdentifier: "ShowEventComics", sender: self)
+        performSegue(withIdentifier: "ShowEventComics", sender: self)
     }
 
 }
